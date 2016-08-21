@@ -4,6 +4,59 @@
   
     
     <entry>
+      <title><![CDATA[笔记-Git的简单操作]]></title>
+      <url>http://yoursite.com/2016/08/21/%E7%AC%94%E8%AE%B0-Git%E7%9A%84%E7%AE%80%E5%8D%95%E6%93%8D%E4%BD%9C/</url>
+      <content type="html"><![CDATA[<h1 id="笔记-Git的简单操作"><a href="#笔记-Git的简单操作" class="headerlink" title="笔记-Git的简单操作"></a>笔记-Git的简单操作</h1><h2 id="这是一篇非常基础的Git简单操作方法"><a href="#这是一篇非常基础的Git简单操作方法" class="headerlink" title="这是一篇非常基础的Git简单操作方法"></a>这是一篇非常基础的Git简单操作方法</h2><p><em>如果大神就不需要读下去了😈 不过十分欢迎帮我纠错、帮我进步嘿嘿</em>~~~  </p>
+<h2 id="git命令行的使用（俺这个是基于Mac系统写滴）"><a href="#git命令行的使用（俺这个是基于Mac系统写滴）" class="headerlink" title="git命令行的使用（俺这个是基于Mac系统写滴）"></a>git命令行的使用（俺这个是基于Mac系统写滴）</h2><ul>
+<li><code>git</code> &emsp;有三个区域，分别是<code>工作区 暂存区 版本库</code></li>
+<li><code>cd</code> &emsp;&emsp;到某一文件目录下  （<code>cd..</code>是回退到上一层目录）  </li>
+<li><code>git config</code> –global user.name(/email)  这是配置用户名  </li>
+<li><code>git status</code> 查看当前的状态  </li>
+<li><code>git add +文件</code> 将文件添加到了暂存区</li>
+<li><code>git add .</code>  &emsp;&emsp;是将想要上传的全部文件都添加到暂存区</li>
+<li><code>git commit</code> &emsp;是从暂存区添加到版本库   </li>
+<li><code>git commit -a -m &quot;文件&quot;</code> 简写方式&emsp;直接从工作区提交到版本库  </li>
+<li><code>git log</code>&emsp;查看提交历史版本&emsp;版本如果非常多的时候可以按回车继续加载&emsp;退出可以按Q键<br>&nbsp;<h2 id="关于对比"><a href="#关于对比" class="headerlink" title="关于对比"></a>关于对比</h2></li>
+<li><code>git diff</code>&emsp;这是工作区和暂存区之间的对比</li>
+<li><code>git diff--cached/staged</code>&emsp;暂存区和版本库之间的对比  </li>
+<li><code>git diff master</code>&emsp;工作区和版本库之间对比<br>&nbsp;<h2 id="关于撤销"><a href="#关于撤销" class="headerlink" title="关于撤销"></a>关于撤销</h2></li>
+<li><code>git reset 文件</code>&emsp;将文件从暂存区撤回工作区  </li>
+<li><code>git checkout --文件</code>&emsp;将工作区的文件还原到版本库或者暂存区的样子  </li>
+<li><code>git commit --amend</code>&emsp;撤销上交版本库<br>&nbsp;<h2 id="关于删除"><a href="#关于删除" class="headerlink" title="关于删除"></a>关于删除</h2></li>
+<li><code>git rm 文件名</code>&emsp;删除暂存区的文件，但是如果工作区的文件没有删除那么暂存区的也删除不了   </li>
+<li><code>git rm -f 文件名</code>&emsp;工作区和暂存区的文件都删除  </li>
+<li><code>git rm --cached 文件名</code>&emsp;暂存区的文件删掉，工作区的仍保留<br>&nbsp;<h2 id="关于恢复"><a href="#关于恢复" class="headerlink" title="关于恢复"></a>关于恢复</h2></li>
+<li>版本号可以通过git log获得</li>
+<li><code>git reset --hard(commit id)</code>回到之前的版本  </li>
+<li><code>git reset HEAD^</code>HEAD相当于指针，HEAD^代表回到前一个版本  </li>
+<li><code>git reset --hard HEAD~Number</code>向前回退多个版本的命令  </li>
+<li><code>git relog</code>可以查看之前的操作历史  </li>
+<li><code>git remote</code>查看远程仓库的名字</li>
+<li><code>git remote add</code>可以改名字</li>
+<li><code>git remote -v</code>查看远程仓库的地址  </li>
+<li><code>git push 远程仓库名字  分支</code>向github推送<br>&nbsp;<h2 id="关于分支"><a href="#关于分支" class="headerlink" title="关于分支"></a>关于分支</h2></li>
+<li><code>git branch</code>可以查看当前所有分支  </li>
+<li><code>git branch new1</code>创建一个新的分支</li>
+<li><code>git checkout new1</code>切换到new1分支上</li>
+<li><code>git checkout -b new1</code>简写 创建一个新分支并切换到新分支上</li>
+<li><code>git branch --merged</code>查看已经合并了的分支都有哪些</li>
+<li><code>git branch --no-merged</code>查看还没有合并到master上的分支</li>
+<li><code>git branch -d new1</code>删除已合并的分支（设new1是以及合并到master上的分支）</li>
+<li><code>git branch -D new2</code>强制删除还没有合并的分支<br>&nbsp;<h2 id="关于冲突"><a href="#关于冲突" class="headerlink" title="关于冲突"></a>关于冲突</h2></li>
+<li>一般是建议先同步更新代码到本地再在本地进行后续的开发</li>
+<li><code>git fetch</code>同步</li>
+<li><code>git diff master origin/master</code>查看区别以及冲突</li>
+<li><code>git merge origin/master</code>合并版本库文件到本地  </li>
+<li>处理完冲突后再提交<code>git commit -a -m</code>再<code>git push origin master</code></li>
+<li><code>git pull</code>是直接拉取合并 没有查看冲突和手动合并的过程<br>&nbsp;<h2 id="关于开源项目协作"><a href="#关于开源项目协作" class="headerlink" title="关于开源项目协作"></a>关于开源项目协作</h2></li>
+<li>fork 是从别人那儿克隆过来的 再新开的分支</li>
+<li>如果你没有开发者权限 还想把自己的一些开发建议提供给开发者那么就需要用<code>pull request</code>来申请合并~<br>&nbsp;<h3 id="关于更详尽更权威的git使用可以参阅"><a href="#关于更详尽更权威的git使用可以参阅" class="headerlink" title="关于更详尽更权威的git使用可以参阅"></a>关于更详尽更权威的git使用可以参阅</h3><a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external">廖雪峰-Git教程</a><br><a href="https://git-scm.com" target="_blank" rel="external">Git官网</a>  </li>
+</ul>
+<p><em>如若文章有些许错误之处还请多多指出 帮助我进步哈~</em>🙆</p>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[絮絮叨叨~]]></title>
       <url>http://yoursite.com/2016/08/20/%E7%B5%AE%E7%B5%AE%E5%8F%A8%E5%8F%A8/</url>
       <content type="html"><![CDATA[<h1 id="絮絮叨叨"><a href="#絮絮叨叨" class="headerlink" title="絮絮叨叨"></a>絮絮叨叨</h1><p>其实我更习惯于白纸黑字的手写笔记，嘿嘿 可能是因为自己写的就只有自己能看懂的缘故吧~~在网上看了很多大牛写的技术文章感觉好赞，因为我也是名工科女，所以之前也确实有一些认同所谓文理科之间的鸿沟（因为我的文笔确实不咋样-_-|||）。可是呢看到那些大牛们可以把自己的文章写的十分详尽内容充实而又条理清晰确实十分膜拜！<br>所以呢，我决定以后也要多写东西，多记笔记，多加练习。😅</p>
