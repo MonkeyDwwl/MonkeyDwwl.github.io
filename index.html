@@ -319,16 +319,17 @@
       
         
           
-            <p>#HTML知识点小结<br>    &lt;meta charset=“UTF-8”&gt;<br>    <meta>是一个单标签<br>    UTF-8 是统一转换格式</p>
-<p>##标签类型 </p>
-<ul>
+            <h1 id="HTML知识点小结"><a href="#HTML知识点小结" class="headerlink" title="HTML知识点小结"></a>HTML知识点小结</h1><pre><code>&lt;meta charset=“UTF-8&quot;&gt;  
+&lt;meta&gt;是一个单标签
+UTF-8 是统一转换格式
+</code></pre><h2 id="标签类型"><a href="#标签类型" class="headerlink" title="标签类型"></a>标签类型</h2><ul>
 <li>块: 独自占一行,支持所以样式,不设宽度将撑满整行  </li>
-<li>内嵌: 可以在一行并列显示,不支持宽高 不支持上下margin和padding ,宽度是由内容撑起来的,代码换行会被解析出一个空格<br>###内嵌标签<pre><code>&lt;span&gt;span&lt;/span&gt;
+<li>内嵌: 可以在一行并列显示,不支持宽高 不支持上下margin和padding ,宽度是由内容撑起来的,代码换行会被解析出一个空格   <h3 id="内嵌标签"><a href="#内嵌标签" class="headerlink" title="内嵌标签"></a>内嵌标签</h3><pre><code>&lt;span&gt;span&lt;/span&gt;
 &lt;strong&gt;strong&lt;/strong&gt;
 &lt;a href=&quot;#&quot;&gt;a标签&lt;/a&gt;
 &lt;em&gt;em&lt;/em&gt;
 ...
-</code></pre>####不得不说的a标签</li>
+</code></pre><h4 id="不得不说的a标签"><a href="#不得不说的a标签" class="headerlink" title="不得不说的a标签"></a>不得不说的a标签</h4></li>
 </ul>
 <ol>
 <li>a元素，既可以用来链接到外部地址实现页面跳转功能，也可以链接到当前页面的某部分实现内部导航功能.<br>其中a标签里的href<br>若“”里面是页面地址 就是跳转作用；<br>若“”里面是压缩包名字 就是下载作用；<br>若“”里面是id名字 点击之后会跳转到该id的页面位置 即锚点作用；  </li>
@@ -339,8 +340,8 @@ target=“_self”  当前窗口打开
 </code></pre><ol>
 <li>a标签的颜色 必须是写在a标签里面的！  </li>
 <li>a标签里面不能再包含a标签；  </li>
-<li><p>在ie6 下只有a 才支持:hover 伪类，其它标签都不支持，现在可以通过 csshover.htc 可以解决 ie6 的 hover 兼容问题。它利用 javascript 脚本来给元素的的样式定义，如果检测到 hover 定义，就给元素设置 onmouseover 和 onmouseout 事件，以此来实现 hover 的效果。<br>###块级元素</p>
-<pre><code>&lt;div&gt;块&lt;/div&gt;
+<li><p>在ie6 下只有a 才支持:hover 伪类，其它标签都不支持，现在可以通过 csshover.htc 可以解决 ie6 的 hover 兼容问题。它利用 javascript 脚本来给元素的的样式定义，如果检测到 hover 定义，就给元素设置 onmouseover 和 onmouseout 事件，以此来实现 hover 的效果。  </p>
+<h3 id="块级元素"><a href="#块级元素" class="headerlink" title="块级元素"></a>块级元素</h3><pre><code>&lt;div&gt;块&lt;/div&gt;
 &lt;section&gt;划分页面板块&lt;/section&gt;
 &lt;header&gt;头部&lt;/header&gt;
 &lt;nav&gt;导航&lt;/nav&gt;
@@ -365,19 +366,20 @@ target=“_self”  当前窗口打开
 &lt;p&gt;段落&lt;/p&gt;
 </code></pre></li>
 </ol>
-<p>##块和内嵌的转化</p>
-<ul>
+<h2 id="块和内嵌的转化"><a href="#块和内嵌的转化" class="headerlink" title="块和内嵌的转化"></a>块和内嵌的转化</h2><ul>
 <li><p>display：block  内联转化为块  </p>
 </li>
 <li><p>display：inline  块转化为内联元素  </p>
 </li>
-<li><p>display：inline-block<em>的特点</em>：<br>1 块们能在一行显示<br>2 内嵌标签支持宽高<br>3 没有设置宽度时 内容会撑开宽度<br>####img单标签<br><strong>行内块级元素</strong></p>
+<li><p>display：inline-block<em>的特点</em>：<br>1 块们能在一行显示<br>2 内嵌标签支持宽高<br>3 没有设置宽度时 内容会撑开宽度</p>
+<h4 id="img单标签"><a href="#img单标签" class="headerlink" title="img单标签"></a>img单标签</h4><p><strong>行内块级元素</strong></p>
 <pre><code>&lt;i mg src=“路径”/&gt;
 </code></pre><p><strong>路径的计算</strong>   </p>
 </li>
 <li><p>绝对路径：<br>1.线上的绝对路径 （网上固定的地址)<br>2.线下的绝对路径（不建议用）   </p>
 </li>
-<li><p>相对路径:<br>1.同目录的下一级 如 “img/pic/img.jpg”<br>2.图片在目录的上一级 如“../img.jpg”<br>###<em>其他标签详情请参阅</em><br><a href="http://www.w3school.com.cn/tags/index.asp" target="_blank" rel="external">W3School</a></p>
+<li><p>相对路径:<br>1.同目录的下一级 如 “img/pic/img.jpg”<br>2.图片在目录的上一级 如“../img.jpg”</p>
+<h3 id="其他标签详情请参阅"><a href="#其他标签详情请参阅" class="headerlink" title="其他标签详情请参阅"></a><em>其他标签详情请参阅</em></h3><p><a href="http://www.w3school.com.cn/tags/index.asp" target="_blank" rel="external">W3School</a></p>
 </li>
 </ul>
 
