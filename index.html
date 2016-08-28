@@ -268,6 +268,167 @@
             
               
                 
+                <a class="post-title-link" href="/2016/08/29/HTML知识点小结/" itemprop="url">
+                  HTML知识点小结
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-29T00:13:04+08:00" content="2016-08-29">
+              2016-08-29
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/08/29/HTML知识点小结/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/29/HTML知识点小结/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>#HTML知识点小结<br>    &lt;meta charset=“UTF-8”&gt;<br>    <meta>是一个单标签<br>    UTF-8 是统一转换格式</p>
+<p>##标签类型 </p>
+<ul>
+<li>块: 独自占一行,支持所以样式,不设宽度将撑满整行  </li>
+<li>内嵌: 可以在一行并列显示,不支持宽高 不支持上下margin和padding ,宽度是由内容撑起来的,代码换行会被解析出一个空格<br>###内嵌标签<pre><code>&lt;span&gt;span&lt;/span&gt;
+&lt;strong&gt;strong&lt;/strong&gt;
+&lt;a href=&quot;#&quot;&gt;a标签&lt;/a&gt;
+&lt;em&gt;em&lt;/em&gt;
+...
+</code></pre>####不得不说的a标签</li>
+</ul>
+<ol>
+<li>a元素，既可以用来链接到外部地址实现页面跳转功能，也可以链接到当前页面的某部分实现内部导航功能.<br>其中a标签里的href<br>若“”里面是页面地址 就是跳转作用；<br>若“”里面是压缩包名字 就是下载作用；<br>若“”里面是id名字 点击之后会跳转到该id的页面位置 即锚点作用；  </li>
+</ol>
+<pre><code>target=“_blank ” 新窗口打开页面
+target=“_self”  当前窗口打开
+&lt;base target=“_blank”/&gt;
+</code></pre><ol>
+<li>a标签的颜色 必须是写在a标签里面的！  </li>
+<li>a标签里面不能再包含a标签；  </li>
+<li><p>在ie6 下只有a 才支持:hover 伪类，其它标签都不支持，现在可以通过 csshover.htc 可以解决 ie6 的 hover 兼容问题。它利用 javascript 脚本来给元素的的样式定义，如果检测到 hover 定义，就给元素设置 onmouseover 和 onmouseout 事件，以此来实现 hover 的效果。<br>###块级元素</p>
+<pre><code>&lt;div&gt;块&lt;/div&gt;
+&lt;section&gt;划分页面板块&lt;/section&gt;
+&lt;header&gt;头部&lt;/header&gt;
+&lt;nav&gt;导航&lt;/nav&gt;
+&lt;footer&gt;底部&lt;/footer&gt;
+&lt;article&gt;article&lt;/article&gt;
+&lt;aside&gt;article的附属&lt;/aside&gt;
+&lt;ul&gt;
+     &lt;li&gt;无序列表&lt;/li&gt;      
+     &lt;li&gt;无序列表&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+    &lt;li&gt;有序列表&lt;/li&gt;
+    &lt;li&gt;有序列表&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;dl&gt;
+    &lt;dt&gt;定义列表的项目&lt;/dt&gt;
+    &lt;dd&gt;dt的展开描述&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h1&gt;标题&lt;/h1&gt;
+&lt;p&gt;段落&lt;/p&gt;
+</code></pre></li>
+</ol>
+<p>##块和内嵌的转化</p>
+<ul>
+<li><p>display：block  内联转化为块  </p>
+</li>
+<li><p>display：inline  块转化为内联元素  </p>
+</li>
+<li><p>display：inline-block<em>的特点</em>：<br>1 块们能在一行显示<br>2 内嵌标签支持宽高<br>3 没有设置宽度时 内容会撑开宽度<br>####img单标签<br><strong>行内块级元素</strong></p>
+<pre><code>&lt;i mg src=“路径”/&gt;
+</code></pre><p><strong>路径的计算</strong>   </p>
+</li>
+<li><p>绝对路径：<br>1.线上的绝对路径 （网上固定的地址)<br>2.线下的绝对路径（不建议用）   </p>
+</li>
+<li><p>相对路径:<br>1.同目录的下一级 如 “img/pic/img.jpg”<br>2.图片在目录的上一级 如“../img.jpg”<br>###<em>其他标签详情请参阅</em><br><a href="http://www.w3school.com.cn/tags/index.asp" target="_blank" rel="external">W3School</a></p>
+</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/08/21/笔记-Git的简单操作/" itemprop="url">
                   笔记-Git的简单操作
                 </a>
@@ -637,7 +798,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
