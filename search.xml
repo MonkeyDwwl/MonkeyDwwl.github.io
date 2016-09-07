@@ -4,6 +4,57 @@
   
     
     <entry>
+      <title><![CDATA[关于Hexo部署文章时出现的问题-SSH]]></title>
+      <url>http://yoursite.com/2016/09/07/%E5%85%B3%E4%BA%8EHexo%E9%83%A8%E7%BD%B2%E6%96%87%E7%AB%A0%E6%97%B6%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98-SSH/</url>
+      <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>想必使用github和hexo搭建博客的同学们或多或少的都会遇到一些让自己抓头的报错信息。最近我就遇到了两次关于权限问题的报错，所以写这篇文章也是让自己涨涨记性吧🙄  </p>
+<h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p><strong>我遇到的权限问题是这样的</strong><br>首先我是之前有设置SSH的 ，并且使用github客户端和github上都可以正常使用，唯独是当我想在Hexo上发布文章时会出现下面的状况，真真的是使我几天都百思不得其解啊。  </p>
+<p><code>Permission denied (publickey).</code><br><code>fatal: Could not read from remote repository.</code><br><code>Please make sure you have the correct access rights and the repository exists.</code>   </p>
+<p><em>大致的意思是说：没有权限，无法读取远程仓库。请确保你有正确的访问权限或者确认仓库的存在。</em>  </p>
+<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>在网上找到了好几种解决方案，我在这里想推荐的是一种我认为最简单粗暴的方法——<strong>直接删除已有的SSH文件然后重新设置并添加到github上。</strong>  </p>
+<h2 id="具体操作"><a href="#具体操作" class="headerlink" title="具体操作"></a>具体操作</h2><h3 id="打开终端，输入："><a href="#打开终端，输入：" class="headerlink" title="打开终端，输入："></a>打开终端，输入：</h3><p>   <code>ls -al ~/.ssh</code><br>   这个命令会列出你SSH账户里现存的SSH key,当然如果你之前就没有设置过那么就是空的。因为我之前是设置过的所以会罗列出之前设置的SSH。    </p>
+<h3 id="在文件夹中找到-SSH文件并删除"><a href="#在文件夹中找到-SSH文件并删除" class="headerlink" title="在文件夹中找到.SSH文件并删除"></a>在文件夹中找到.SSH文件并删除</h3><h3 id="再次打开终端，先重复第一步检查是否删除了，然后开始重新设置"><a href="#再次打开终端，先重复第一步检查是否删除了，然后开始重新设置" class="headerlink" title="再次打开终端，先重复第一步检查是否删除了，然后开始重新设置"></a>再次打开终端，先重复第一步检查是否删除了，然后开始重新设置</h3><h3 id="生成密匙"><a href="#生成密匙" class="headerlink" title="生成密匙"></a>生成密匙</h3><ul>
+<li>输入：<br><code>ssh-keygen -t rsa -C &quot;你的邮箱地址&quot;</code><br>这个命令会生成一个以你的邮箱为标签的SSH key .   </li>
+<li>然后bash会显示：<br><code>Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/you/.ssh/id_rsa):</code>     </li>
+<li>直接回车，然后出现：<br> <code>Enter passphrase (empty for no passphrase):</code><br>如果你不怕麻烦可以设置一个，但我的建议是不要设置，简化操作。</li>
+<li>直接回车，然后出现：<br><code>Enter same passphrase again:</code><br>再次回车即可。此时你会看到：      <pre><code>Your identification has been saved in ~/.ssh/id_rsa.
+Your public key has been saved in ~/.ssh/id_rsa.pub.
+The key fingerprint is:
+......你的邮箱地址
+</code></pre></li>
+</ul>
+<h3 id="加入Agent"><a href="#加入Agent" class="headerlink" title="加入Agent"></a>加入Agent</h3><ul>
+<li>输入：<br><code>ssh-agent -s</code>   </li>
+<li>当出现：<br><code>Agent pid =XXX</code>   </li>
+<li><p>之后再输入：<br><code>ssh-add ~/.ssh/id_rsa</code>   </p>
+<p>到此为止，在本地我们就成功生成了一个新的SSH key.      </p>
+</li>
+</ul>
+<h3 id="将SSH-key-添加到GitHub"><a href="#将SSH-key-添加到GitHub" class="headerlink" title="将SSH key 添加到GitHub"></a>将SSH key 添加到GitHub</h3><ul>
+<li>打开自己的GitHub,点击自己头像找到倒数第二项的settings，然后找到侧栏上SSH and GPG keys .  </li>
+<li>点击new SSH  </li>
+<li>复制id_rsa.pub中的所有内容到Key框中，在Title框中输入方便自己记忆的名字。  </li>
+</ul>
+<p><strong>当网页显示添加成功后，就已经完成了全部的操作。</strong>  </p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><ul>
+<li><p>打开终端，输入：    </p>
+<p><code>ssh -T git@github.com</code>    </p>
+</li>
+<li><p>bash 会显示：    </p>
+<p><code>The authenticity of host &#39;github.com (207.97.227.239)&#39; can&#39;t be established.
+RSA key fingerprint is ......
+Are you sure you want to continue connecting (yes/no)?</code>    </p>
+</li>
+<li><p>输入yes 会出现如下提示：     </p>
+<p> <code>Hi username! You&#39;ve successfully authenticated, but GitHub does not
+provide shell access.</code>     </p>
+</li>
+</ul>
+<p><strong>如果成功看见此提示，说明你已经配置好了</strong>  </p>
+<h2 id="如果您有什么更好的解决方案还劳烦告知我🙆"><a href="#如果您有什么更好的解决方案还劳烦告知我🙆" class="headerlink" title="如果您有什么更好的解决方案还劳烦告知我🙆"></a>如果您有什么更好的解决方案还劳烦告知我🙆</h2>]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[唠叨唠叨]]></title>
       <url>http://yoursite.com/2016/09/06/%E5%94%A0%E5%8F%A8%E5%94%A0%E5%8F%A8/</url>
       <content type="html"><![CDATA[<h1 id="参加战友婚礼日记一则"><a href="#参加战友婚礼日记一则" class="headerlink" title="参加战友婚礼日记一则"></a>参加战友婚礼日记一则</h1><p>感觉有很久没有上来写东西了，哎。。。每天都在忙，很充实，很累，很安心。<br>退伍回来两年了，前两天去参加一个战友的婚礼，战友人缘很好，所以来了许多玩的好的战友，婚礼非常热闹，一群战友聚在一起依然是那份简单的战友情。有像我这种退伍了继续上学的，有回家继承产业的，也有自己创业当老板的，还有回老家当公务员的，大家都各有各的事业和生活，聚在一起没有像同学聚会时那种陌生感，而是非常自然的说笑玩闹，与在部队里时一模一样，真的很温暖。<br>想起有人问过我，战友和朋友又能有啥不一样？我回答不上来，但是我心里明白，是真的非常不一样！这份战友之间的情谊，虽然没有战争年代那种生死之交，但却绝对超越朋友间友谊的存在。<br>匆匆忙忙相聚了两天，我又带着离别的伤感回到了北京，还要准备即将到来的考研！努力吧girl ~~~ 为了能成为更好的自己！</p>
