@@ -4,6 +4,38 @@
   
     
     <entry>
+      <title><![CDATA[浮动与清除浮动]]></title>
+      <url>http://yoursite.com/2016/09/12/%E6%B5%AE%E5%8A%A8%E4%B8%8E%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8/</url>
+      <content type="html"><![CDATA[<h1 id="浮动float"><a href="#浮动float" class="headerlink" title="浮动float"></a>浮动float</h1><h2 id="文档流"><a href="#文档流" class="headerlink" title="文档流"></a>文档流</h2><p><strong>文档中可显示对象在排列时所占用的位置</strong>  </p>
+<h2 id="浮动的定义"><a href="#浮动的定义" class="headerlink" title="浮动的定义"></a>浮动的定义</h2><p><strong>使元素脱离文档流，按照指定的方向发生移动，遇到父级边界或者相邻的浮动元素停下来</strong>  </p>
+<h2 id="float特征"><a href="#float特征" class="headerlink" title="float特征"></a>float特征</h2><ul>
+<li>块级元素在一排显示  </li>
+<li>内联元素支持宽高  </li>
+<li>默认内容撑开宽度  </li>
+<li>脱离文档流  </li>
+<li>提升半个层级   </li>
+</ul>
+<h2 id="clear清除浮动"><a href="#clear清除浮动" class="headerlink" title="clear清除浮动"></a>clear清除浮动</h2><p><strong>元素的某个方向上不能有浮动元素</strong>  </p>
+<p><code>clear left/right/both/none/inherit</code>  </p>
+<h1 id="清除浮动的方法"><a href="#清除浮动的方法" class="headerlink" title="清除浮动的方法"></a>清除浮动的方法</h1><h2 id="1-给父级加高度"><a href="#1-给父级加高度" class="headerlink" title="1.给父级加高度"></a>1.给父级加高度</h2><p><em>问题是扩展性不好</em>  </p>
+<h2 id="2-给父级加浮动"><a href="#2-给父级加浮动" class="headerlink" title="2.给父级加浮动"></a>2.给父级加浮动</h2><p><em>问题是页面中所有元素可能都要加浮动，margin左右自动失效</em>  </p>
+<h2 id="3-给父级设置-display：inline-block"><a href="#3-给父级设置-display：inline-block" class="headerlink" title="3.给父级设置 display：inline-block"></a>3.给父级设置 <code>display：inline-block</code></h2><p><em>问题是 margin左右auto失效</em>  </p>
+<h2 id="4-空标签清浮动"><a href="#4-空标签清浮动" class="headerlink" title="4.空标签清浮动"></a>4.空标签清浮动</h2><p>在浮动元素旁边新建空标签并给其添加样式<code>clear：both；</code>达到给浮动元素清除浮动的效果。<br><em>问题是IE6最小高度19px;解决后还有2px的偏差，而且设置空标签不符合标准，不建议使用</em>  </p>
+<h2 id="5-lt-br-gt-清浮动"><a href="#5-lt-br-gt-清浮动" class="headerlink" title="5.&lt;br&gt;清浮动"></a>5.<code>&lt;br&gt;</code>清浮动</h2><p>在浮动元素下面加<code>&lt;br clear=&quot;all&quot;/&gt;</code><br><em>问题是不符合工作中结构、样式、行为三者分离的要求</em>  </p>
+<h2 id="6-overflow清除浮动"><a href="#6-overflow清除浮动" class="headerlink" title="6.overflow清除浮动"></a>6.overflow清除浮动</h2><p>给浮动元素的父级添加<code>overflow：hidden；</code>  </p>
+<p><code>overflow:hidden;</code><em>溢出隐藏</em><br><code>overflow:scroll;</code><em>以滚动条形式出现</em></p>
+<h2 id="7-建议使用：after伪类清除浮动"><a href="#7-建议使用：after伪类清除浮动" class="headerlink" title="7.建议使用：after伪类清除浮动"></a><em>7.建议使用：after伪类清除浮动</em></h2><p>伪类：元素内部末尾添加的内容。<br>设置zoom,并将after内的content设为空。<br>伪类清除浮动，例如:   </p>
+<pre><code>.clearfix{ *zoom:1; }
+
+.clearfix:after{   
+content:&quot;&quot;;    
+display:block;   
+clear:both;    
+}  
+</code></pre>]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[关于Hexo部署文章时出现的问题-SSH]]></title>
       <url>http://yoursite.com/2016/09/07/%E5%85%B3%E4%BA%8EHexo%E9%83%A8%E7%BD%B2%E6%96%87%E7%AB%A0%E6%97%B6%E5%87%BA%E7%8E%B0%E7%9A%84%E9%97%AE%E9%A2%98-SSH/</url>
       <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>想必使用github和hexo搭建博客的同学们或多或少的都会遇到一些让自己抓头的报错信息。最近我就遇到了两次关于权限问题的报错，所以写这篇文章也是让自己涨涨记性吧🙄  </p>
