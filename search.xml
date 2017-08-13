@@ -59,8 +59,8 @@
 <p><img src="http://upload-images.jianshu.io/upload_images/2730186-79a1585c1bbb0dfb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">  </p>
 <p>上面的代码中，<strong>f1</strong>就是被节流函数变懒了的<strong>test</strong>。<br>代码运行中，<strong>f</strong>函数中<strong>t1</strong>这个局部变量被<strong>f</strong>函数内部定义的<strong>t</strong>函数引用后，当<strong>f</strong>函数调用执行完毕后，<strong>t1</strong>这个变量并没有随之被回收，而是一直可以被访问。这就是闭包的体现。  </p>
 <h2 id="闭包的弊端"><a href="#闭包的弊端" class="headerlink" title="闭包的弊端"></a>闭包的弊端</h2><ol>
-<li>闭包会使函数内的变量一直被保存在内存中, 这是极耗内存的方式. 不可以滥用闭包,会对网页的性能有很大的影响. 在IE中可能会导致内存泄露.</li>
-<li>闭包在函数外部可以访问并改变函数内部变量的值, 这是好事也是坏事. 如果把父级函数作为对象使用, 而把闭包作为它的公用方法, 而又把其内部变量作为它的私有属性,这时就一定要注意了,<em>不要轻易改变父级函数内部变量的值</em>.   </li>
+<li>闭包会使函数内的变量一直被保存在内存中，这是极耗内存的方式。不可以滥用闭包，会对网页的性能有很大的影响。在IE中可能会导致内存泄露。</li>
+<li>闭包在函数外部可以访问并改变函数内部变量的值，这是好事也是坏事。如果把父级函数作为对象使用，而把闭包作为它的公用方法，而又把其内部变量作为它的私有属性，这时就一定要注意了！<em>不要轻易改变父级函数内部变量的值</em>。   </li>
 </ol>
 <h2 id="以上就是对JavaScript中闭包的复习👀"><a href="#以上就是对JavaScript中闭包的复习👀" class="headerlink" title="以上就是对JavaScript中闭包的复习👀"></a>以上就是对JavaScript中闭包的复习👀</h2>]]></content>
     </entry>
