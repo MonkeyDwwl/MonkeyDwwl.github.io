@@ -4,11 +4,9 @@
   
     
     <entry>
-      <title></title>
+      <title><![CDATA[JavaScript之闭包]]></title>
       <url>http://yoursite.com/2017/08/13/JavaScript-%E9%97%AD%E5%8C%85/</url>
-      <content type="html"><![CDATA[<hr>
-<p>title: JavaScript之闭包<br>date: 2017-08-13 23:22:22</p>
-<h2 id="tags-笔记"><a href="#tags-笔记" class="headerlink" title="tags: 笔记"></a>tags: 笔记</h2><h2 id="闭包-Closure-概念"><a href="#闭包-Closure-概念" class="headerlink" title="闭包(Closure)概念"></a>闭包(Closure)概念</h2><p>在A函数中定义了一个B函数,在B函数中使用了A函数中的变量,就会产生闭包,其中B就是一个闭包.<br>也可以说,定义在一个函数内部的这个函数就是闭包.</p>
+      <content type="html"><![CDATA[<h1 id="JavaScript之闭包"><a href="#JavaScript之闭包" class="headerlink" title="JavaScript之闭包"></a>JavaScript之闭包</h1><h2 id="闭包-Closure-概念"><a href="#闭包-Closure-概念" class="headerlink" title="闭包(Closure)概念"></a>闭包(Closure)概念</h2><p>在A函数中定义了一个B函数,在B函数中使用了A函数中的变量,就会产生闭包,其中B就是一个闭包.<br>也可以说,定义在一个函数内部的这个函数就是闭包.</p>
 <h2 id="理解闭包需要的几个相关概念"><a href="#理解闭包需要的几个相关概念" class="headerlink" title="理解闭包需要的几个相关概念"></a>理解闭包需要的几个相关概念</h2><h3 id="1-变量的作用域"><a href="#1-变量的作用域" class="headerlink" title="1.变量的作用域"></a>1.变量的作用域</h3><p>在ES5中变量有两个作用域:  </p>
 <ol>
 <li>全局作用域(global)  </li>

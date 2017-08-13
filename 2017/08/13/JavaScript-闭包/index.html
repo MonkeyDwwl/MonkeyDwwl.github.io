@@ -84,33 +84,36 @@
 
 
 
-<meta name="description" content="title: JavaScript之闭包date: 2017-08-13 23:22:22
-tags: 笔记闭包(Closure)概念在A函数中定义了一个B函数,在B函数中使用了A函数中的变量,就会产生闭包,其中B就是一个闭包.也可以说,定义在一个函数内部的这个函数就是闭包.
+<meta name="description" content="JavaScript之闭包闭包(Closure)概念在A函数中定义了一个B函数,在B函数中使用了A函数中的变量,就会产生闭包,其中B就是一个闭包.也可以说,定义在一个函数内部的这个函数就是闭包.
 理解闭包需要的几个相关概念1.变量的作用域在ES5中变量有两个作用域:  
 
 全局作用域(global)  
-局部作用域">
+局部作用域(local)  
+
+在ES6中补充了一个新的作用域-块级作用域(block)">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Monkey･D･wwl">
+<meta property="og:title" content="JavaScript之闭包">
 <meta property="og:url" content="http://yoursite.com/2017/08/13/JavaScript-闭包/index.html">
 <meta property="og:site_name" content="Monkey･D･wwl">
-<meta property="og:description" content="title: JavaScript之闭包date: 2017-08-13 23:22:22
-tags: 笔记闭包(Closure)概念在A函数中定义了一个B函数,在B函数中使用了A函数中的变量,就会产生闭包,其中B就是一个闭包.也可以说,定义在一个函数内部的这个函数就是闭包.
+<meta property="og:description" content="JavaScript之闭包闭包(Closure)概念在A函数中定义了一个B函数,在B函数中使用了A函数中的变量,就会产生闭包,其中B就是一个闭包.也可以说,定义在一个函数内部的这个函数就是闭包.
 理解闭包需要的几个相关概念1.变量的作用域在ES5中变量有两个作用域:  
 
 全局作用域(global)  
-局部作用域">
+局部作用域(local)  
+
+在ES6中补充了一个新的作用域-块级作用域(block)">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2730186-98239b155710aab5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2730186-7bb9ac42c343e506.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-08-13T17:25:53.000Z">
+<meta property="og:updated_time" content="2017-08-13T17:29:23.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Monkey･D･wwl">
-<meta name="twitter:description" content="title: JavaScript之闭包date: 2017-08-13 23:22:22
-tags: 笔记闭包(Closure)概念在A函数中定义了一个B函数,在B函数中使用了A函数中的变量,就会产生闭包,其中B就是一个闭包.也可以说,定义在一个函数内部的这个函数就是闭包.
+<meta name="twitter:title" content="JavaScript之闭包">
+<meta name="twitter:description" content="JavaScript之闭包闭包(Closure)概念在A函数中定义了一个B函数,在B函数中使用了A函数中的变量,就会产生闭包,其中B就是一个闭包.也可以说,定义在一个函数内部的这个函数就是闭包.
 理解闭包需要的几个相关概念1.变量的作用域在ES5中变量有两个作用域:  
 
 全局作用域(global)  
-局部作用域">
+局部作用域(local)  
+
+在ES6中补充了一个新的作用域-块级作用域(block)">
 <meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/2730186-98239b155710aab5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 
 
@@ -134,7 +137,7 @@ tags: 笔记闭包(Closure)概念在A函数中定义了一个B函数,在B函数�
 
   <link rel="canonical" href="http://yoursite.com/2017/08/13/JavaScript-闭包/"/>
 
-  <title>  | Monkey･D･wwl </title>
+  <title> JavaScript之闭包 | Monkey･D･wwl </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -287,7 +290,7 @@ tags: 笔记闭包(Closure)概念在A函数中定义了一个B函数,在B函数�
             
             
               
-                
+                JavaScript之闭包
               
             
           </h1>
@@ -334,9 +337,7 @@ tags: 笔记闭包(Closure)概念在A函数中定义了一个B函数,在B函数�
       
 
       
-        <hr>
-<p>title: JavaScript之闭包<br>date: 2017-08-13 23:22:22</p>
-<h2 id="tags-笔记"><a href="#tags-笔记" class="headerlink" title="tags: 笔记"></a>tags: 笔记</h2><h2 id="闭包-Closure-概念"><a href="#闭包-Closure-概念" class="headerlink" title="闭包(Closure)概念"></a>闭包(Closure)概念</h2><p>在A函数中定义了一个B函数,在B函数中使用了A函数中的变量,就会产生闭包,其中B就是一个闭包.<br>也可以说,定义在一个函数内部的这个函数就是闭包.</p>
+        <h1 id="JavaScript之闭包"><a href="#JavaScript之闭包" class="headerlink" title="JavaScript之闭包"></a>JavaScript之闭包</h1><h2 id="闭包-Closure-概念"><a href="#闭包-Closure-概念" class="headerlink" title="闭包(Closure)概念"></a>闭包(Closure)概念</h2><p>在A函数中定义了一个B函数,在B函数中使用了A函数中的变量,就会产生闭包,其中B就是一个闭包.<br>也可以说,定义在一个函数内部的这个函数就是闭包.</p>
 <h2 id="理解闭包需要的几个相关概念"><a href="#理解闭包需要的几个相关概念" class="headerlink" title="理解闭包需要的几个相关概念"></a>理解闭包需要的几个相关概念</h2><h3 id="1-变量的作用域"><a href="#1-变量的作用域" class="headerlink" title="1.变量的作用域"></a>1.变量的作用域</h3><p>在ES5中变量有两个作用域:  </p>
 <ol>
 <li>全局作用域(global)  </li>
@@ -437,7 +438,7 @@ return t ;
     <div class="post-spread">
       
         <div class="ds-share flat" data-thread-key="2017/08/13/JavaScript-闭包/"
-     data-title=""
+     data-title="JavaScript之闭包"
      data-content=""
      data-url="http://yoursite.com/2017/08/13/JavaScript-闭包/">
   <div class="ds-share-inline">
@@ -462,12 +463,15 @@ return t ;
           </div>
           
 
+  <p>热评文章</p>
+  <div class="ds-top-threads" data-range="weekly" data-num-items="4"></div>
+
 
           
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2017/08/13/JavaScript-闭包/"
-           data-title="" data-url="http://yoursite.com/2017/08/13/JavaScript-闭包/">
+           data-title="JavaScript之闭包" data-url="http://yoursite.com/2017/08/13/JavaScript-闭包/">
       </div>
     
   </div>
@@ -589,7 +593,7 @@ return t ;
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#tags-笔记"><span class="nav-number">1.</span> <span class="nav-text">tags: 笔记</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#闭包-Closure-概念"><span class="nav-number">2.</span> <span class="nav-text">闭包(Closure)概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#理解闭包需要的几个相关概念"><span class="nav-number">3.</span> <span class="nav-text">理解闭包需要的几个相关概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-变量的作用域"><span class="nav-number">3.1.</span> <span class="nav-text">1.变量的作用域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-执行上下文"><span class="nav-number">3.2.</span> <span class="nav-text">2.执行上下文</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#执行上下文的组成"><span class="nav-number">3.2.1.</span> <span class="nav-text">执行上下文的组成</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#全局上下文"><span class="nav-number">3.2.2.</span> <span class="nav-text">全局上下文</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数执行上下文"><span class="nav-number">3.2.3.</span> <span class="nav-text">函数执行上下文</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-词法作用域-静态作用域"><span class="nav-number">3.3.</span> <span class="nav-text">3.词法作用域-静态作用域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-函数的嵌套定义"><span class="nav-number">3.4.</span> <span class="nav-text">4.函数的嵌套定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-作用域链"><span class="nav-number">3.5.</span> <span class="nav-text">5.作用域链</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#再次理解闭包"><span class="nav-number">4.</span> <span class="nav-text">再次理解闭包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#闭包的弊端"><span class="nav-number">5.</span> <span class="nav-text">闭包的弊端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#以上就是对JavaScript中闭包的复习👀"><span class="nav-number">6.</span> <span class="nav-text">以上就是对JavaScript中闭包的复习👀</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript之闭包"><span class="nav-number">1.</span> <span class="nav-text">JavaScript之闭包</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#闭包-Closure-概念"><span class="nav-number">1.1.</span> <span class="nav-text">闭包(Closure)概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#理解闭包需要的几个相关概念"><span class="nav-number">1.2.</span> <span class="nav-text">理解闭包需要的几个相关概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-变量的作用域"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.变量的作用域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-执行上下文"><span class="nav-number">1.2.2.</span> <span class="nav-text">2.执行上下文</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#执行上下文的组成"><span class="nav-number">1.2.2.1.</span> <span class="nav-text">执行上下文的组成</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#全局上下文"><span class="nav-number">1.2.2.2.</span> <span class="nav-text">全局上下文</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数执行上下文"><span class="nav-number">1.2.2.3.</span> <span class="nav-text">函数执行上下文</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-词法作用域-静态作用域"><span class="nav-number">1.2.3.</span> <span class="nav-text">3.词法作用域-静态作用域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-函数的嵌套定义"><span class="nav-number">1.2.4.</span> <span class="nav-text">4.函数的嵌套定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-作用域链"><span class="nav-number">1.2.5.</span> <span class="nav-text">5.作用域链</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#再次理解闭包"><span class="nav-number">1.3.</span> <span class="nav-text">再次理解闭包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#闭包的弊端"><span class="nav-number">1.4.</span> <span class="nav-text">闭包的弊端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#以上就是对JavaScript中闭包的复习👀"><span class="nav-number">1.5.</span> <span class="nav-text">以上就是对JavaScript中闭包的复习👀</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
