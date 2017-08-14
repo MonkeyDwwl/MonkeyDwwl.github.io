@@ -34,7 +34,7 @@
 <li>所有的代码都在全局执行上下文中执行  </li>
 </ul>
 <h4 id="函数执行上下文"><a href="#函数执行上下文" class="headerlink" title="函数执行上下文"></a>函数执行上下文</h4><p>每次调用函数都会产生一个执行上下文，函数调用完成后，会把执行上下文释放掉。<br>按照函数的调用顺序，这些上下文以栈的形式存储(先进后出).栈底是全局上下文。  </p>
-<h3 id="3-词法作用域-静态作用域"><a href="#3-词法作用域-静态作用域" class="headerlink" title="3.词法作用域-静态作用域"></a>3.词法作用域-静态作用域</h3><p>js代码的书写顺序，就决定了变量的作用域。换言之，在函数内部去访问一个变量，应该去定义这个函数(写这个函数的位置)的相关作用域中去找，而不是调用这个函数的那个作用域中去找。  </p>
+<h3 id="3-词法作用域-静态作用域"><a href="#3-词法作用域-静态作用域" class="headerlink" title="3.词法作用域-静态作用域"></a>3.词法作用域-静态作用域</h3><p>js代码的书写顺序，就决定了变量的作用域。换言之，在函数内部去访问一个变量，应该去定义这个函数(写这个函数的位置)的相关作用域中去找，而不是调用这个函数的那个作用域中去找。<br>一般来说，在编程语言里我们常见的变量作用域就是词法作用域与动态作用域（Dynamic Scope），绝大部分的编程语言都是使用的词法作用域。词法作用域注重的是所谓的 Write-Time，即编程时的上下文，而动态作用域以及常见的 this 的用法，都是 Run-Time，即运行时上下文。词法作用域关注的是函数在何处被定义，而动态作用域关注的是函数在何处被调用。  </p>
 <p><em>举个栗子就比较好懂些,如下图</em><br><img src="http://upload-images.jianshu.io/upload_images/2730186-98239b155710aab5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">  </p>
 <h3 id="4-函数的嵌套定义"><a href="#4-函数的嵌套定义" class="headerlink" title="4.函数的嵌套定义"></a>4.函数的嵌套定义</h3><p>在JS中,在函数体中可以再次定义另一个函数；并且可以多层函数嵌套使用。  </p>
 <h3 id="5-作用域链"><a href="#5-作用域链" class="headerlink" title="5.作用域链"></a>5.作用域链</h3><p>在JS中有两条链，分别是作用域链和原型链，这里要着重说到作用域链。<br>在函数的内部，要确定一个变量的值，会从当前的作用域出发，沿着作用域链向上找，如果找到全局作用域中还是没有找到，那么就会报引用类型错误。  </p>
@@ -53,7 +53,7 @@
 <h2 id="闭包的作用"><a href="#闭包的作用" class="headerlink" title="闭包的作用"></a>闭包的作用</h2><p>根据前面的理解,可以归纳闭包的作用有：  </p>
 <ol>
 <li>读取函数内部的变量  </li>
-<li>延长这些变量的生命周期  </li>
+<li>延长这些变量的寿命  </li>
 </ol>
 <h2 id="使用闭包的栗子来一个-节流函数"><a href="#使用闭包的栗子来一个-节流函数" class="headerlink" title="使用闭包的栗子来一个 - 节流函数"></a>使用闭包的栗子来一个 - 节流函数</h2><p>节流函数，可以让一个函数变得”懒”，调用一次之后需要隔一段时间才能再次调用，即降低函数的可被调用的频率。话不多说上代码   </p>
 <p><img src="http://upload-images.jianshu.io/upload_images/2730186-79a1585c1bbb0dfb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">  </p>
@@ -68,34 +68,42 @@
     <entry>
       <title><![CDATA[关于JavaScript变量提升那点事儿]]></title>
       <url>http://yoursite.com/2017/08/11/%E5%85%B3%E4%BA%8EJavaScript%E5%8F%98%E9%87%8F%E6%8F%90%E5%8D%87%E9%82%A3%E7%82%B9%E4%BA%8B%E5%84%BF/</url>
-      <content type="html"><![CDATA[<h3 id="ECMAScript在浏览器端运行被称为JavaScript"><a href="#ECMAScript在浏览器端运行被称为JavaScript" class="headerlink" title="ECMAScript在浏览器端运行被称为JavaScript"></a>ECMAScript在浏览器端运行被称为JavaScript</h3><p>在浏览器端JavaScript是一种描述型脚本语言，不需要编译成中间语言，而是由浏览器按代码块顺序进行动态地解析与执行。</p>
-<h3 id="看一道简单的题目"><a href="#看一道简单的题目" class="headerlink" title="看一道简单的题目"></a>看一道简单的题目</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">console.log(a);</div><div class="line">var a = 666;</div><div class="line">console.log(a);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<p>这道题目很简单，但是却很能说明问题。</p>
-<h3 id="关于预编译"><a href="#关于预编译" class="headerlink" title="关于预编译"></a>关于预编译</h3><p>JavaScript代码不需要编译成一个其它可执行的文件，但是js代码在执行之前会有一个准备过程，这个准备过程叫作预编译。<br>预编译的过程是不可见的，也不会产生额外的文件。  </p>
+      <content type="html"><![CDATA[<h2 id="ECMAScript在浏览器端运行被称为JavaScript"><a href="#ECMAScript在浏览器端运行被称为JavaScript" class="headerlink" title="ECMAScript在浏览器端运行被称为JavaScript"></a>ECMAScript在浏览器端运行被称为JavaScript</h2><p>在浏览器端JavaScript是一种描述型脚本语言，不需要编译成中间语言，而是由浏览器按代码块顺序进行动态地解析与执行。</p>
+<h2 id="关于作用域"><a href="#关于作用域" class="headerlink" title="关于作用域"></a>关于作用域</h2><p>ES6之前，只有全局作用域和函数作用域；ES6引入了块级作用域。作用域是代码执行过程中的变量、函数或者对象的可访问区域。  </p>
+<ul>
+<li>全局作用域：当定义变量的地方没有被 function 包括则是全局变量  </li>
+<li>函数作用域：在函数内部定义的变量就是处于函数作用域中  </li>
+<li>块状作用域：类似于 if、switch 条件选择或者 for、while 这样的循环体即是所谓的块级作用域  </li>
+</ul>
+<h2 id="关于变量的生命周期"><a href="#关于变量的生命周期" class="headerlink" title="关于变量的生命周期"></a>关于变量的生命周期</h2><p>变量的生命周期包含着变量声明、变量初始化、以及变量赋值三个步骤；其中声明步骤会在作用域中注册变量，初始化步骤负责为变量分配内存并且创建作用域绑定，此时变量会被初始化为 undefined，最后的分配步骤则会将开发者指定的值分配给该变量。  </p>
+<h2 id="关于预编译"><a href="#关于预编译" class="headerlink" title="关于预编译"></a>关于预编译</h2><p>JavaScript代码不需要编译成一个其它可执行的文件，但是js代码在执行之前会有一个准备过程，这个准备过程叫作预编译。<br>预编译的过程是不可见的，也不会产生额外的文件。  </p>
 <p>预编译期间会主要完成两件事情：  </p>
 <ol>
 <li>按顺序扫码代码块，如果发现<em>语法错误</em>，停止工作并报错；  </li>
-<li>若没有<em>语法错误</em>，做<strong>提升</strong>操作；  </li>
+<li>若没有<em>语法错误</em>，做声明变量和初始化变量的操作即所谓的<strong>变量提升</strong>操作；  </li>
 </ol>
-<h3 id="提升操作"><a href="#提升操作" class="headerlink" title="提升操作"></a>提升操作</h3><ul>
-<li>变量提升：把所有带有var关键字的变量名，提升到当前代码块的开始，并设初值为undefined。  </li>
+<h2 id="先看一道简单的题目"><a href="#先看一道简单的题目" class="headerlink" title="先看一道简单的题目"></a>先看一道简单的题目</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">	console.log(a);</div><div class="line">	var a = 666;</div><div class="line">	console.log(a);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<p>这道题目很简单，但是却很能说明问题。  </p>
+<h2 id="提升操作"><a href="#提升操作" class="headerlink" title="提升操作"></a>提升操作</h2><ul>
+<li>使用var声明的变量的提升：把所有带有var关键字的变量名，提升到当前代码块的开始，并设初值为undefined。  </li>
 <li>函数提升：把所有用声明式定义的函数，提升到当前代码块的开始，注意是做函数整体的提升。  </li>
 </ul>
 <p><strong>具体细节如下</strong> </p>
-<h4 id="只提升加var的变量，没有var不提升"><a href="#只提升加var的变量，没有var不提升" class="headerlink" title="只提升加var的变量，没有var不提升"></a>只提升加var的变量，没有var不提升</h4><p><img src="http://upload-images.jianshu.io/upload_images/2730186-266c440143dba498.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>如图，没有var，变量名没有提升，相当于没有声明变量a就直接使用它，会出现引用类型错误。  </p>
-<h4 id="if结构中的变量提升"><a href="#if结构中的变量提升" class="headerlink" title="if结构中的变量提升"></a>if结构中的变量提升</h4><p><img src="http://upload-images.jianshu.io/upload_images/2730186-20f86b3429ca61b2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>如图所示，变量提升一定是发生在预编译期（提升之后才会进入代码的执行期），而变量的提升与if条件语句是否成立无关。只要有var就会提升。  </p>
-<h4 id="for循环中的变量提升"><a href="#for循环中的变量提升" class="headerlink" title="for循环中的变量提升"></a>for循环中的变量提升</h4><p><img src="http://upload-images.jianshu.io/upload_images/2730186-8b4ad0a12a5529fd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>同样会做变量提升。</p>
-<h4 id="函数内部的变量提升"><a href="#函数内部的变量提升" class="headerlink" title="函数内部的变量提升"></a>函数内部的变量提升</h4><p><img src="http://upload-images.jianshu.io/upload_images/2730186-a8366838f4f0348b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>函数内部定义的变量，不可能提上到函数的外部。如图会直接报错。<br><img src="http://upload-images.jianshu.io/upload_images/2730186-e5c4844260011ea0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>函数内部的变量只会体升到函数的开始位置。</p>
-<h4 id="只提升声明式定义的函数"><a href="#只提升声明式定义的函数" class="headerlink" title="只提升声明式定义的函数"></a>只提升声明式定义的函数</h4><p>定义函数有两种方式：  </p>
+<h3 id="只提升加var的变量，没有var不提升"><a href="#只提升加var的变量，没有var不提升" class="headerlink" title="只提升加var的变量，没有var不提升"></a>只提升加var的变量，没有var不提升</h3><p><img src="http://upload-images.jianshu.io/upload_images/2730186-266c440143dba498.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>如图，没有var，变量名没有提升，相当于没有声明变量a就直接使用它，会出现引用类型错误。  </p>
+<h3 id="if结构中的变量提升"><a href="#if结构中的变量提升" class="headerlink" title="if结构中的变量提升"></a>if结构中的变量提升</h3><p><img src="http://upload-images.jianshu.io/upload_images/2730186-20f86b3429ca61b2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>如图所示，变量提升一定是发生在预编译期（提升之后才会进入代码的执行期），而变量的提升与if条件语句是否成立无关。只要有var就会提升。  </p>
+<h3 id="for循环中的变量提升"><a href="#for循环中的变量提升" class="headerlink" title="for循环中的变量提升"></a>for循环中的变量提升</h3><p><img src="http://upload-images.jianshu.io/upload_images/2730186-8b4ad0a12a5529fd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>同样会做变量提升。  </p>
+<h3 id="函数内部的变量提升"><a href="#函数内部的变量提升" class="headerlink" title="函数内部的变量提升"></a>函数内部的变量提升</h3><p><img src="http://upload-images.jianshu.io/upload_images/2730186-a8366838f4f0348b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>函数内部定义的变量，不可能提上到函数的外部。如图会直接报错。<br><img src="http://upload-images.jianshu.io/upload_images/2730186-e5c4844260011ea0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>函数内部的变量只会体升到函数的开始位置。</p>
+<h3 id="只提升声明式定义的函数"><a href="#只提升声明式定义的函数" class="headerlink" title="只提升声明式定义的函数"></a>只提升声明式定义的函数</h3><p>定义函数有两种方式：  </p>
 <ul>
 <li>声明式：<code>function f(){}</code>  </li>
 <li>函数表达式： <code>var f = function(){}</code>  </li>
 </ul>
 <p><img src="http://upload-images.jianshu.io/upload_images/2730186-467f03657a376c0a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>函数提升是整个函数体提升，变量提升是提升的变量名。<br><img src="http://upload-images.jianshu.io/upload_images/2730186-e0b957fdbd4fdd63.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>如上图所示，通过表达式定义的函数提升，报了一个TypeError的错误；是因为预编译期将var关键字提升，也就是说这里的<strong>f</strong>就是一个普通变量，它的初值被赋为undefined；当代码执行到第11行<code>f();</code>时就相当于是<code>undefined();</code>,所以肯定会报类型错误。</p>
-<h4 id="函数与变量同时提升"><a href="#函数与变量同时提升" class="headerlink" title="函数与变量同时提升"></a>函数与变量同时提升</h4><p><img src="http://upload-images.jianshu.io/upload_images/2730186-305d721f20d50a11.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>当函数名与变量名同名，且同时提升，以函数为准。<br>理由是<strong>函数是一等公民</strong>，地位高于变量。</p>
-<h4 id="提升不能跨script标签"><a href="#提升不能跨script标签" class="headerlink" title="提升不能跨script标签"></a>提升不能跨script标签</h4><p><img src="http://upload-images.jianshu.io/upload_images/2730186-3bb33ac5c0934c46.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">  </p>
-<h3 id="开始那道题的答案"><a href="#开始那道题的答案" class="headerlink" title="开始那道题的答案"></a>开始那道题的答案</h3><p><img src="http://upload-images.jianshu.io/upload_images/2730186-444b776fc73ee1f8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">  </p>
-<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>以上，就是关于JavaScript变量提升的知识小结。</p>
+<h3 id="函数与变量同时提升"><a href="#函数与变量同时提升" class="headerlink" title="函数与变量同时提升"></a>函数与变量同时提升</h3><p><img src="http://upload-images.jianshu.io/upload_images/2730186-305d721f20d50a11.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>当函数名与变量名同名，且同时提升，以函数为准。<br>理由是<strong>函数是一等公民</strong>，地位高于变量。</p>
+<h3 id="提升不能跨script标签"><a href="#提升不能跨script标签" class="headerlink" title="提升不能跨script标签"></a>提升不能跨script标签</h3><p><img src="http://upload-images.jianshu.io/upload_images/2730186-3bb33ac5c0934c46.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">  </p>
+<h3 id="开始那道题的答案"><a href="#开始那道题的答案" class="headerlink" title="开始那道题的答案"></a>开始那道题的答案</h3><p><img src="http://upload-images.jianshu.io/upload_images/2730186-444b776fc73ee1f8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">   </p>
+<h3 id="ES6中的变量提升以及暂时性死区"><a href="#ES6中的变量提升以及暂时性死区" class="headerlink" title="ES6中的变量提升以及暂时性死区"></a>ES6中的变量提升以及暂时性死区</h3><p>在 ES6 中以 let 与 const 关键字声明的变量会在作用域头部被初始化，不过这些变量仅允许在实际声明之后使用。在作用域头部与变量实际声明处之间的区域就称为所谓的<strong>暂时死区</strong>（Temporal Dead Zone），TDZ 能够避免传统的提升引发的潜在问题。</p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>以上，就是关于JavaScript变量提升的知识小结。</p>
 ]]></content>
     </entry>
     

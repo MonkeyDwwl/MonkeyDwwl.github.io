@@ -107,7 +107,7 @@
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2730186-98239b155710aab5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2730186-7bb9ac42c343e506.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2730186-79a1585c1bbb0dfb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-08-13T17:58:53.000Z">
+<meta property="og:updated_time" content="2017-08-14T02:14:16.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript之闭包">
 <meta name="twitter:description" content="闭包(Closure)概念在A函数中定义了一个B函数，在B函数中使用了A函数中的变量，就会产生闭包，其中B就是一个闭包。也可以说，定义在一个函数内部的这个函数就是闭包。  
@@ -369,7 +369,7 @@
 <li>所有的代码都在全局执行上下文中执行  </li>
 </ul>
 <h4 id="函数执行上下文"><a href="#函数执行上下文" class="headerlink" title="函数执行上下文"></a>函数执行上下文</h4><p>每次调用函数都会产生一个执行上下文，函数调用完成后，会把执行上下文释放掉。<br>按照函数的调用顺序，这些上下文以栈的形式存储(先进后出).栈底是全局上下文。  </p>
-<h3 id="3-词法作用域-静态作用域"><a href="#3-词法作用域-静态作用域" class="headerlink" title="3.词法作用域-静态作用域"></a>3.词法作用域-静态作用域</h3><p>js代码的书写顺序，就决定了变量的作用域。换言之，在函数内部去访问一个变量，应该去定义这个函数(写这个函数的位置)的相关作用域中去找，而不是调用这个函数的那个作用域中去找。  </p>
+<h3 id="3-词法作用域-静态作用域"><a href="#3-词法作用域-静态作用域" class="headerlink" title="3.词法作用域-静态作用域"></a>3.词法作用域-静态作用域</h3><p>js代码的书写顺序，就决定了变量的作用域。换言之，在函数内部去访问一个变量，应该去定义这个函数(写这个函数的位置)的相关作用域中去找，而不是调用这个函数的那个作用域中去找。<br>一般来说，在编程语言里我们常见的变量作用域就是词法作用域与动态作用域（Dynamic Scope），绝大部分的编程语言都是使用的词法作用域。词法作用域注重的是所谓的 Write-Time，即编程时的上下文，而动态作用域以及常见的 this 的用法，都是 Run-Time，即运行时上下文。词法作用域关注的是函数在何处被定义，而动态作用域关注的是函数在何处被调用。  </p>
 <p><em>举个栗子就比较好懂些,如下图</em><br><img src="http://upload-images.jianshu.io/upload_images/2730186-98239b155710aab5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">  </p>
 <h3 id="4-函数的嵌套定义"><a href="#4-函数的嵌套定义" class="headerlink" title="4.函数的嵌套定义"></a>4.函数的嵌套定义</h3><p>在JS中,在函数体中可以再次定义另一个函数；并且可以多层函数嵌套使用。  </p>
 <h3 id="5-作用域链"><a href="#5-作用域链" class="headerlink" title="5.作用域链"></a>5.作用域链</h3><p>在JS中有两条链，分别是作用域链和原型链，这里要着重说到作用域链。<br>在函数的内部，要确定一个变量的值，会从当前的作用域出发，沿着作用域链向上找，如果找到全局作用域中还是没有找到，那么就会报引用类型错误。  </p>
@@ -388,7 +388,7 @@
 <h2 id="闭包的作用"><a href="#闭包的作用" class="headerlink" title="闭包的作用"></a>闭包的作用</h2><p>根据前面的理解,可以归纳闭包的作用有：  </p>
 <ol>
 <li>读取函数内部的变量  </li>
-<li>延长这些变量的生命周期  </li>
+<li>延长这些变量的寿命  </li>
 </ol>
 <h2 id="使用闭包的栗子来一个-节流函数"><a href="#使用闭包的栗子来一个-节流函数" class="headerlink" title="使用闭包的栗子来一个 - 节流函数"></a>使用闭包的栗子来一个 - 节流函数</h2><p>节流函数，可以让一个函数变得”懒”，调用一次之后需要隔一段时间才能再次调用，即降低函数的可被调用的频率。话不多说上代码   </p>
 <p><img src="http://upload-images.jianshu.io/upload_images/2730186-79a1585c1bbb0dfb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">  </p>
