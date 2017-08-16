@@ -1,1614 +1,660 @@
-<!doctype html>
-
-
-
-  
-
-
-<html class="theme-next muse use-motion">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
+  <meta charset="utf-8">
   
+  <title>Monkey･D･wwl</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
+    <meta name="keywords" content="MonkeyDwwl's Blog" />
   
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="Hexo, NexT" />
-
-
-
-
-
-
-
-
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
-
-
-
-
-
-
-<meta property="og:type" content="website">
+  <meta property="og:type" content="website">
 <meta property="og:title" content="Monkey･D･wwl">
 <meta property="og:url" content="http://yoursite.com/index.html">
 <meta property="og:site_name" content="Monkey･D･wwl">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Monkey･D･wwl">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
 
+  
+  
 
-
-<script type="text/javascript" id="hexo.configuration">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    scheme: 'Muse',
-    sidebar: {"position":"left","display":"post"},
-    fancybox: true,
-    motion: true,
-    duoshuo: {
-      userId: undefined,
-      author: '博主'
-    }
-  };
-</script>
-
-
-
-
-  <link rel="canonical" href="http://yoursite.com/"/>
-
-  <title> Monkey･D･wwl </title>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.jpeg" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        MonkeyDwwl&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        一个专注 WEB 开发的技术博客
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="github" target="_blank" href="//github.com/MonkeyDwwl" title="github"><i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a class="twitter" target="_blank" href="//twitter.com/MonkeyDwwl" title="twitter"><i class="fa fa-twitter fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap">
   
-
-
-
-  <script type="text/javascript">
-    var _hmt = _hmt || [];
-    (function() {
-      var hm = document.createElement("script");
-      hm.src = "//hm.baidu.com/hm.js?de02bb613eb511da0d1f37ad72aef7d7";
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(hm, s);
-    })();
-  </script>
-
-
-
-
-
-
-
-
-  
-  
+    <article id="post-JavaScript-闭包" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/13/JavaScript-闭包/"  >JavaScript之闭包</a>
+    </h1>
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
-    <div class="headband"></div>
+          
+      </header>
+    
+    <div class="article-entry " itemprop="articleBody">
+      
+        <div class="article-img">
+            <a>
+                
+                <img src="images/banner.jpg" alt="JavaScript之闭包" title="JavaScript之闭包">
+                
+            </a>
+        </div>
+        <div class="article-feed">
+            <p>
+                闭包(Closure)概念在A函数中定义了一个B函数，在B函数中使用了A函数中的变量，就会产生闭包，其中B就是一个闭包。也可以说，定义在一个函数内部的这个函数就是闭包。  
+理解闭包需要的几个相关概念1.变量的作用域在ES5中变量有两个作用域:  
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta ">
-  
+全局作用域(global)  
+局部作用域(local)  
 
-  <div class="custom-logo-site-title">
-    <a href="/"  class="brand" rel="start">
-      <span class="logo-line-before"><i></i></span>
-      <span class="site-title">Monkey･D･wwl</span>
-      <span class="logo-line-after"><i></i></span>
-    </a>
+在ES6中补充了一个新的作用域-块级作用域(block) ...
+            </p>
+        </div>
+      
+    </div>
+    <footer class="article-footer">
+        <ul class="article-footer-menu">
+            
+                <li><i class="fa fa-calendar"></i>2017-08-13</li>
+            
+            
+        </ul>
+        
+            <a href="/2017/08/13/JavaScript-闭包/#more" class="article-more-link" >more&gt;&gt;</a>
+        
+    </footer>
   </div>
-  <p class="site-subtitle">Stay hungry  Stay foolish</p>
-</div>
+</article>
 
-<div class="site-nav-toggle">
-  <button>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-    <span class="btn-bar"></span>
-  </button>
-</div>
-
-<nav class="site-nav">
-  
 
   
-    <ul id="menu" class="menu">
-      
-        
-        <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            首页
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-archives">
-          <a href="/archives" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            归档
-          </a>
-        </li>
-      
-        
-        <li class="menu-item menu-item-tags">
-          <a href="/tags" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            标签
-          </a>
-        </li>
-      
-
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
-            
-            搜索
-          </a>
-        </li>
-      
-    </ul>
-  
-
-  
-    <div class="site-search">
-      
-  <div class="popup">
- <span class="search-icon fa fa-search"></span>
- <input type="text" id="local-search-input">
- <div id="local-search-result"></div>
- <span class="popup-btn-close">close</span>
-</div>
-
-
-    </div>
-  
-</nav>
-
- </div>
-    </header>
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          <div id="content" class="content">
-            
-  <section id="posts" class="posts-expand">
+    <article id="post-关于JavaScript变量提升那点事儿" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/08/13/JavaScript-闭包/" itemprop="url">
-                  JavaScript之闭包
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-08-13T23:22:22+08:00" content="2017-08-13">
-              2017-08-13
-            </time>
-          </span>
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/11/关于JavaScript变量提升那点事儿/"  >关于JavaScript变量提升那点事儿</a>
+    </h1>
+  
 
           
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2017/08/13/JavaScript-闭包/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/08/13/JavaScript-闭包/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
       </header>
     
-
-
-    <div class="post-body" itemprop="articleBody">
-
+    <div class="article-entry " itemprop="articleBody">
       
-      
+        <div class="article-img">
+            <a>
+                
+                <img src="images/banner.jpg" alt="关于JavaScript变量提升那点事儿" title="关于JavaScript变量提升那点事儿">
+                
+            </a>
+        </div>
+        <div class="article-feed">
+            <p>
+                ECMAScript在浏览器端运行被称为JavaScript在浏览器端JavaScript是一种描述型脚本语言，不需要编译成中间语言，而是由浏览器按代码块顺序进行动态地解析与执行。
+关于作用域ES6之前，只有全局作用域和函数作用域；ES6引入了块级作用域。作用域是代码执行过程中的变量、函数或者对象的可访问区域。  
 
+全局作用域：当定义变量的地方没有被 function ...
+            </p>
+        </div>
       
+    </div>
+    <footer class="article-footer">
+        <ul class="article-footer-menu">
+            
+                <li><i class="fa fa-calendar"></i>2017-08-11</li>
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/笔记/" class="color3">笔记</a>
+      
+  </li>
+
+        </ul>
         
-          
-            <h2 id="闭包-Closure-概念"><a href="#闭包-Closure-概念" class="headerlink" title="闭包(Closure)概念"></a>闭包(Closure)概念</h2><p>在A函数中定义了一个B函数，在B函数中使用了A函数中的变量，就会产生闭包，其中B就是一个闭包。<br>也可以说，定义在一个函数内部的这个函数就是闭包。  </p>
-<h2 id="理解闭包需要的几个相关概念"><a href="#理解闭包需要的几个相关概念" class="headerlink" title="理解闭包需要的几个相关概念"></a>理解闭包需要的几个相关概念</h2><h3 id="1-变量的作用域"><a href="#1-变量的作用域" class="headerlink" title="1.变量的作用域"></a>1.变量的作用域</h3><p>在ES5中变量有两个作用域:  </p>
-<ol>
-<li>全局作用域(global)  </li>
-<li>局部作用域(local)  </li>
-</ol>
-<p>在ES6中补充了一个新的作用域-块级作用域(block)  </p>
-<p>当定义变量的地方没有被 function 包括则是全局变量，否则就是局部变量。  </p>
-<p>在函数的内部会优先使用局部变量(即使全局变量和局部变量同名亦是如此)，在函数调用的过程，会给局部变量创建一个函数栈区(区别于全局栈)，来保存这些局部变量。正常情况下在函数调用结束后，函数栈会被垃圾回收机制处理。</p>
-<h3 id="2-执行上下文"><a href="#2-执行上下文" class="headerlink" title="2.执行上下文"></a>2.执行上下文</h3><ul>
-<li>代码的运行会产生执行上下文,如果代码不运行就没有。  </li>
-<li>全局代码产生全局上下文  </li>
-<li>函数代码产生函数上下文  </li>
-<li>函数嵌套调用形成执行上下文栈  </li>
-<li>执行上下文中保存了执行代码所需要的各类的数据   </li>
-<li>执行上下文是一个对象,在代码运行过程中产生,代码运行完成后就消失.</li>
-</ul>
-<h4 id="执行上下文的组成"><a href="#执行上下文的组成" class="headerlink" title="执行上下文的组成"></a>执行上下文的组成</h4><ol>
-<li>自己的执行上下文  </li>
-<li>父级函数的执行上下文  </li>
-</ol>
-<h4 id="全局上下文"><a href="#全局上下文" class="headerlink" title="全局上下文"></a>全局上下文</h4><p>一旦<code>&lt;script&gt;&lt;/script&gt;</code>标签中代码运行起来,就会产生一个执行上下文,这个执行上下文就是全局执行上下文.  </p>
-<ul>
-<li>全局上下文只有一个  </li>
-<li>全局执行环境是window对象,所有变量和函数都作为window对象的属性和方法创建的  </li>
-<li>所有的代码都在全局执行上下文中执行  </li>
-</ul>
-<h4 id="函数执行上下文"><a href="#函数执行上下文" class="headerlink" title="函数执行上下文"></a>函数执行上下文</h4><p>每次调用函数都会产生一个执行上下文，函数调用完成后，会把执行上下文释放掉。<br>按照函数的调用顺序，这些上下文以栈的形式存储(先进后出).栈底是全局上下文。  </p>
-<h3 id="3-词法作用域-静态作用域"><a href="#3-词法作用域-静态作用域" class="headerlink" title="3.词法作用域-静态作用域"></a>3.词法作用域-静态作用域</h3><p>js代码的书写顺序，就决定了变量的作用域。换言之，在函数内部去访问一个变量，应该去定义这个函数(写这个函数的位置)的相关作用域中去找，而不是调用这个函数的那个作用域中去找。<br>一般来说，在编程语言里我们常见的变量作用域就是词法作用域与动态作用域（Dynamic Scope），绝大部分的编程语言都是使用的词法作用域。词法作用域注重的是所谓的 Write-Time，即编程时的上下文，而动态作用域以及常见的 this 的用法，都是 Run-Time，即运行时上下文。词法作用域关注的是函数在何处被定义，而动态作用域关注的是函数在何处被调用。  </p>
-<p><em>举个栗子就比较好懂些,如下图</em><br><img src="http://upload-images.jianshu.io/upload_images/2730186-98239b155710aab5.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">  </p>
-<h3 id="4-函数的嵌套定义"><a href="#4-函数的嵌套定义" class="headerlink" title="4.函数的嵌套定义"></a>4.函数的嵌套定义</h3><p>在JS中,在函数体中可以再次定义另一个函数；并且可以多层函数嵌套使用。  </p>
-<h3 id="5-作用域链"><a href="#5-作用域链" class="headerlink" title="5.作用域链"></a>5.作用域链</h3><p>在JS中有两条链，分别是作用域链和原型链，这里要着重说到作用域链。<br>在函数的内部，要确定一个变量的值，会从当前的作用域出发，沿着作用域链向上找，如果找到全局作用域中还是没有找到，那么就会报引用类型错误。  </p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2730186-7bb9ac42c343e506.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">  </p>
-<h2 id="再次理解闭包"><a href="#再次理解闭包" class="headerlink" title="再次理解闭包"></a>再次理解闭包</h2><p>从闭包的定义可以抓住两个关键点:  </p>
-<ul>
-<li>函数嵌套定义  </li>
-<li>引用变量  </li>
-</ul>
-<p>通过前面的几个相关知识点，可以发现在JS中，函数内部可以通过作用域链机制轻松得到父级函数内的变量乃至全局变量，而反过来则是行不通的，即函数外部是无法读取函数内局部变量的。  </p>
-<p>那么如果有的场景必须要得到函数内部的局部变量时，需要变通方法那么就产生了闭包。  </p>
-<p>可以在本质上去理解闭包，闭包就是将函数内部和函数外部连接起来的一座桥梁，可以使局部变量被外部函数访问到，也就是说变相的延长了函数中局部变量的寿命。  </p>
-<p>上段代码  </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function f()&#123;  </div><div class="line">	var a = 1;</div><div class="line">	function f1()&#123;</div><div class="line">		console.log(a);</div><div class="line">	&#125;</div><div class="line">	return f1;</div><div class="line">&#125; </div><div class="line">var r = f();</div><div class="line">r();</div></pre></td></tr></table></figure>
-<p>这段代码执行后,结果输出为1。也就是说当函数f调用结束后，它的局部变量a并没有被回收掉。可以说这就是闭包的本质，它使得函数调用结束后，被闭包引用的变量没有被回收机制干掉而顺利存活了下来，还可以被外部访问和使用。  </p>
-<h2 id="闭包的作用"><a href="#闭包的作用" class="headerlink" title="闭包的作用"></a>闭包的作用</h2><p>根据前面的理解,可以归纳闭包的作用有：  </p>
-<ol>
-<li>读取函数内部的变量  </li>
-<li>延长这些变量的寿命  </li>
-</ol>
-<h2 id="使用闭包的栗子来一个-节流函数"><a href="#使用闭包的栗子来一个-节流函数" class="headerlink" title="使用闭包的栗子来一个 - 节流函数"></a>使用闭包的栗子来一个 - 节流函数</h2><p>节流函数，可以让一个函数变得”懒”，调用一次之后需要隔一段时间才能再次调用，即降低函数的可被调用的频率。话不多说上代码   </p>
-<p><img src="http://upload-images.jianshu.io/upload_images/2730186-79a1585c1bbb0dfb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">  </p>
-<p>上面的代码中，<strong>f1</strong>就是被节流函数变懒了的<strong>test</strong>。<br>代码运行中，<strong>f</strong>函数中<strong>t1</strong>这个局部变量被<strong>f</strong>函数内部定义的<strong>t</strong>函数引用后，当<strong>f</strong>函数调用执行完毕后，<strong>t1</strong>这个变量并没有随之被回收，而是一直可以被访问。这就是闭包的体现。  </p>
-<h2 id="闭包的弊端"><a href="#闭包的弊端" class="headerlink" title="闭包的弊端"></a>闭包的弊端</h2><ol>
-<li>闭包会使函数内的变量一直被保存在内存中，这是极耗内存的方式。不可以滥用闭包，会对网页的性能有很大的影响。在IE中可能会导致内存泄露。</li>
-<li>闭包在函数外部可以访问并改变函数内部变量的值，这是好事也是坏事。如果把父级函数作为对象使用，而把闭包作为它的公用方法，而又把其内部变量作为它的私有属性，这时就一定要注意了！<em>不要轻易改变父级函数内部变量的值</em>。   </li>
-</ol>
-<h2 id="以上就是对JavaScript中闭包的复习👀"><a href="#以上就是对JavaScript中闭包的复习👀" class="headerlink" title="以上就是对JavaScript中闭包的复习👀"></a>以上就是对JavaScript中闭包的复习👀</h2>
-          
+            <a href="/2017/08/11/关于JavaScript变量提升那点事儿/#more" class="article-more-link" >more&gt;&gt;</a>
         
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
     </footer>
-  </article>
+  </div>
+</article>
 
 
+  
+    <article id="post-常用浏览器及内核" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/08/11/关于JavaScript变量提升那点事儿/" itemprop="url">
-                  关于JavaScript变量提升那点事儿
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2017-08-11T22:39:17+08:00" content="2017-08-11">
-              2017-08-11
-            </time>
-          </span>
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/19/常用浏览器及内核/"  >常用浏览器及内核</a>
+    </h1>
+  
 
           
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2017/08/11/关于JavaScript变量提升那点事儿/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/08/11/关于JavaScript变量提升那点事儿/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
       </header>
     
-
-
-    <div class="post-body" itemprop="articleBody">
-
+    <div class="article-entry " itemprop="articleBody">
       
-      
+        <div class="article-img">
+            <a>
+                
+                <img src="images/banner.jpg" alt="常用浏览器及内核" title="常用浏览器及内核">
+                
+            </a>
+        </div>
+        <div class="article-feed">
+            <p>
+                常用浏览器及其内核TridentTrident(IE内核)：该内核程序在1997年的IE4中首次被采用  
+Trident内核的常见浏览器有：  
 
+IE6、IE7、IE8、IE9、IE10；  
+360安全浏览器（1.0-5.0为Trident，6.0为Trident+Webkit，7.0为Trident+Blink）;    
+猎豹安全浏览器（1.0-4.2版本为Tr...
+            </p>
+        </div>
       
+    </div>
+    <footer class="article-footer">
+        <ul class="article-footer-menu">
+            
+                <li><i class="fa fa-calendar"></i>2016-09-19</li>
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/笔记/" class="color3">笔记</a>
+      
+  </li>
+
+        </ul>
         
-          
-            <h2 id="ECMAScript在浏览器端运行被称为JavaScript"><a href="#ECMAScript在浏览器端运行被称为JavaScript" class="headerlink" title="ECMAScript在浏览器端运行被称为JavaScript"></a>ECMAScript在浏览器端运行被称为JavaScript</h2><p>在浏览器端JavaScript是一种描述型脚本语言，不需要编译成中间语言，而是由浏览器按代码块顺序进行动态地解析与执行。</p>
-<h2 id="关于作用域"><a href="#关于作用域" class="headerlink" title="关于作用域"></a>关于作用域</h2><p>ES6之前，只有全局作用域和函数作用域；ES6引入了块级作用域。作用域是代码执行过程中的变量、函数或者对象的可访问区域。  </p>
-<ul>
-<li>全局作用域：当定义变量的地方没有被 function 包括则是全局变量  </li>
-<li>函数作用域：在函数内部定义的变量就是处于函数作用域中  </li>
-<li>块状作用域：类似于 if、switch 条件选择或者 for、while 这样的循环体即是所谓的块级作用域  </li>
-</ul>
-<h2 id="关于变量的生命周期"><a href="#关于变量的生命周期" class="headerlink" title="关于变量的生命周期"></a>关于变量的生命周期</h2><p>变量的生命周期包含着变量声明、变量初始化、以及变量赋值三个步骤；其中声明步骤会在作用域中注册变量，初始化步骤负责为变量分配内存并且创建作用域绑定，此时变量会被初始化为 undefined，最后的分配步骤则会将开发者指定的值分配给该变量。  </p>
-<h2 id="关于预编译"><a href="#关于预编译" class="headerlink" title="关于预编译"></a>关于预编译</h2><p>JavaScript代码不需要编译成一个其它可执行的文件，但是js代码在执行之前会有一个准备过程，这个准备过程叫作预编译。<br>预编译的过程是不可见的，也不会产生额外的文件。  </p>
-<p>预编译期间会主要完成两件事情：  </p>
-<ol>
-<li>按顺序扫码代码块，如果发现<em>语法错误</em>，停止工作并报错；  </li>
-<li>若没有<em>语法错误</em>，做声明变量和初始化变量的操作即所谓的<strong>变量提升</strong>操作；  </li>
-</ol>
-<h2 id="先看一道简单的题目"><a href="#先看一道简单的题目" class="headerlink" title="先看一道简单的题目"></a>先看一道简单的题目</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">	console.log(a);</div><div class="line">	var a = 666;</div><div class="line">	console.log(a);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
-<p>这道题目很简单，但是却很能说明问题。  </p>
-<h2 id="提升操作"><a href="#提升操作" class="headerlink" title="提升操作"></a>提升操作</h2><ul>
-<li>使用var声明的变量的提升：把所有带有var关键字的变量名，提升到当前代码块的开始，并设初值为undefined。  </li>
-<li>函数提升：把所有用声明式定义的函数，提升到当前代码块的开始，注意是做函数整体的提升。  </li>
-</ul>
-<p><strong>具体细节如下</strong> </p>
-<h3 id="只提升加var的变量，没有var不提升"><a href="#只提升加var的变量，没有var不提升" class="headerlink" title="只提升加var的变量，没有var不提升"></a>只提升加var的变量，没有var不提升</h3><p><img src="http://upload-images.jianshu.io/upload_images/2730186-266c440143dba498.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>如图，没有var，变量名没有提升，相当于没有声明变量a就直接使用它，会出现引用类型错误。  </p>
-<h3 id="if结构中的变量提升"><a href="#if结构中的变量提升" class="headerlink" title="if结构中的变量提升"></a>if结构中的变量提升</h3><p><img src="http://upload-images.jianshu.io/upload_images/2730186-20f86b3429ca61b2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>如图所示，变量提升一定是发生在预编译期（提升之后才会进入代码的执行期），而变量的提升与if条件语句是否成立无关。只要有var就会提升。  </p>
-<h3 id="for循环中的变量提升"><a href="#for循环中的变量提升" class="headerlink" title="for循环中的变量提升"></a>for循环中的变量提升</h3><p><img src="http://upload-images.jianshu.io/upload_images/2730186-8b4ad0a12a5529fd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>同样会做变量提升。  </p>
-<h3 id="函数内部的变量提升"><a href="#函数内部的变量提升" class="headerlink" title="函数内部的变量提升"></a>函数内部的变量提升</h3><p><img src="http://upload-images.jianshu.io/upload_images/2730186-a8366838f4f0348b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>函数内部定义的变量，不可能提上到函数的外部。如图会直接报错。<br><img src="http://upload-images.jianshu.io/upload_images/2730186-e5c4844260011ea0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>函数内部的变量只会体升到函数的开始位置。</p>
-<h3 id="只提升声明式定义的函数"><a href="#只提升声明式定义的函数" class="headerlink" title="只提升声明式定义的函数"></a>只提升声明式定义的函数</h3><p>定义函数有两种方式：  </p>
-<ul>
-<li>声明式：<code>function f(){}</code>  </li>
-<li>函数表达式： <code>var f = function(){}</code>  </li>
-</ul>
-<p><img src="http://upload-images.jianshu.io/upload_images/2730186-467f03657a376c0a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>函数提升是整个函数体提升，变量提升是提升的变量名。<br><img src="http://upload-images.jianshu.io/upload_images/2730186-e0b957fdbd4fdd63.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>如上图所示，通过表达式定义的函数提升，报了一个TypeError的错误；是因为预编译期将var关键字提升，也就是说这里的<strong>f</strong>就是一个普通变量，它的初值被赋为undefined；当代码执行到第11行<code>f();</code>时就相当于是<code>undefined();</code>,所以肯定会报类型错误。</p>
-<h3 id="函数与变量同时提升"><a href="#函数与变量同时提升" class="headerlink" title="函数与变量同时提升"></a>函数与变量同时提升</h3><p><img src="http://upload-images.jianshu.io/upload_images/2730186-305d721f20d50a11.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""><br>当函数名与变量名同名，且同时提升，以函数为准。<br>理由是<strong>函数是一等公民</strong>，地位高于变量。</p>
-<h3 id="提升不能跨script标签"><a href="#提升不能跨script标签" class="headerlink" title="提升不能跨script标签"></a>提升不能跨script标签</h3><p><img src="http://upload-images.jianshu.io/upload_images/2730186-3bb33ac5c0934c46.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">  </p>
-<h3 id="开始那道题的答案"><a href="#开始那道题的答案" class="headerlink" title="开始那道题的答案"></a>开始那道题的答案</h3><p><img src="http://upload-images.jianshu.io/upload_images/2730186-444b776fc73ee1f8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">   </p>
-<h3 id="ES6中的变量提升以及暂时性死区"><a href="#ES6中的变量提升以及暂时性死区" class="headerlink" title="ES6中的变量提升以及暂时性死区"></a>ES6中的变量提升以及暂时性死区</h3><p>在 ES6 中以 let 与 const 关键字声明的变量会在作用域头部被初始化，不过这些变量仅允许在实际声明之后使用。在作用域头部与变量实际声明处之间的区域就称为所谓的<strong>暂时死区</strong>（Temporal Dead Zone），TDZ 能够避免传统的提升引发的潜在问题。</p>
-<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>以上，就是关于JavaScript变量提升的知识小结。</p>
-
-          
+            <a href="/2016/09/19/常用浏览器及内核/#more" class="article-more-link" >more&gt;&gt;</a>
         
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
     </footer>
-  </article>
+  </div>
+</article>
 
 
+  
+    <article id="post-浮动与清除浮动" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/19/常用浏览器及内核/" itemprop="url">
-                  常用浏览器及内核
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-19T23:15:26+08:00" content="2016-09-19">
-              2016-09-19
-            </time>
-          </span>
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/12/浮动与清除浮动/"  >浮动与清除浮动</a>
+    </h1>
+  
 
           
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/09/19/常用浏览器及内核/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/19/常用浏览器及内核/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
       </header>
     
-
-
-    <div class="post-body" itemprop="articleBody">
-
+    <div class="article-entry " itemprop="articleBody">
       
-      
+        <div class="article-img">
+            <a>
+                
+                <img src="images/banner.jpg" alt="浮动与清除浮动" title="浮动与清除浮动">
+                
+            </a>
+        </div>
+        <div class="article-feed">
+            <p>
+                浮动float文档流文档中可显示对象在排列时所占用的位置  
+浮动的定义使元素脱离文档流，按照指定的方向发生移动，遇到父级边界或者相邻的浮动元素停下来  
+float特征
+块级元素在一排显示  
+内联元素支持宽高  
+默认内容撑开宽度  
+脱离文档流  
+提升半个层级   
 
+clear清除浮动元素的某个方向上不能有浮动元素  
+clear left/right/both...
+            </p>
+        </div>
       
+    </div>
+    <footer class="article-footer">
+        <ul class="article-footer-menu">
+            
+                <li><i class="fa fa-calendar"></i>2016-09-12</li>
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/笔记/" class="color3">笔记</a>
+      
+  </li>
+
+        </ul>
         
-          
-            <h1 id="常用浏览器及其内核"><a href="#常用浏览器及其内核" class="headerlink" title="常用浏览器及其内核"></a>常用浏览器及其内核</h1><h2 id="Trident"><a href="#Trident" class="headerlink" title="Trident"></a>Trident</h2><p><strong>Trident(IE内核)：该内核程序在1997年的IE4中首次被采用</strong>  </p>
-<p>Trident内核的常见浏览器有：  </p>
-<ol>
-<li>IE6、IE7、IE8、IE9、IE10；  </li>
-<li>360安全浏览器（1.0-5.0为Trident，6.0为Trident+Webkit，7.0为Trident+Blink）;    </li>
-<li>猎豹安全浏览器（1.0-4.2版本为Trident+Webkit，4.3及以后版本为Trident+Blink）;    </li>
-<li>傲游浏览器（傲游1.x、2.x为IE内核，3.x为IE与Webkit双核） ;  </li>
-<li>百度浏览器（早期版本） ; </li>
-<li>世界之窗浏览器（最初为IE内核，2013年采用Chrome+IE内核）;  </li>
-<li>腾讯TT ;  </li>
-<li>搜狗高速浏览器（1.x为Trident，2.0及以后版本为Trident+Webkit）;  </li>
-<li>UC浏览器（Blink内核+Trident内核）。   </li>
-</ol>
-<p><em><strong> 其中部分浏览器的新版本是“双核”甚至是“多核”，其中一个内核是Trident，然后再增加一个其他内核。国内的厂商一般把其他内核叫做“高速浏览模式”，而Trident则是“兼容浏览模式”，用户可以来回切换。</strong></em>  </p>
-<h2 id="Gecko"><a href="#Gecko" class="headerlink" title="Gecko"></a>Gecko</h2><p>Gecko(Firefox内核)：Netscape6开始采用的内核，后来的Mozilla FireFox(火狐浏览器) 也采用了该内核.<br>Gecko的特点是代码完全公开，因此，其可开发程度很高，全世界的程序员都可以为其编写代码，增加功能。  </p>
-<h2 id="Presto"><a href="#Presto" class="headerlink" title="Presto"></a>Presto</h2><p>Presto(Opera前内核) (已废弃)： Opera12.17及更早版本曾经采用的内核，现已停止开发并废弃.<br>Presto是商业引擎,与前面几个内核的最大的区别就在脚本处理上，Presto有着天生的优势，页面的全部或者部分都能够在回应脚本事件时等情况下被重新解析。  </p>
-<p><em><strong>Opera现已改用Google Chrome的 Blink内核。</strong></em>  </p>
-<h2 id="Webkit"><a href="#Webkit" class="headerlink" title="Webkit"></a>Webkit</h2><p>Webkit(Safari内核,Chrome内核原型,开源):它是苹果公司自己的内核，也是苹果的Safari浏览器使用的内核。<br>Webkit也是自由软件，同时开放源代码。  </p>
-<p>WebKit内核常见的浏览器：  </p>
-<ol>
-<li>傲游浏览器3  </li>
-<li>Apple Safari (Win/Mac/iPhone/iPad)  </li>
-<li>Android 默认浏览器  </li>
-</ol>
-<h2 id="Blink"><a href="#Blink" class="headerlink" title="Blink"></a>Blink</h2><p>Blink是一个由Google和Opera Software开发的浏览器排版引擎<br>Google计划将这个渲染引擎作为Chromium计划的一部分，这一渲染引擎是开源引擎WebKit中WebCore组件的一个分支，并且在Chrome（28及往后版本）、Opera（15及往后版本）和Yandex浏览器中使用。  </p>
-
-          
+            <a href="/2016/09/12/浮动与清除浮动/#more" class="article-more-link" >more&gt;&gt;</a>
         
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
     </footer>
-  </article>
+  </div>
+</article>
 
 
+  
+    <article id="post-关于Hexo部署文章时出现的问题-SSH" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/12/浮动与清除浮动/" itemprop="url">
-                  浮动与清除浮动
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-12T21:37:30+08:00" content="2016-09-12">
-              2016-09-12
-            </time>
-          </span>
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/07/关于Hexo部署文章时出现的问题-SSH/"  >关于Hexo部署文章时出现的问题-SSH</a>
+    </h1>
+  
 
           
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/09/12/浮动与清除浮动/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/12/浮动与清除浮动/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
       </header>
     
-
-
-    <div class="post-body" itemprop="articleBody">
-
+    <div class="article-entry " itemprop="articleBody">
       
+        <div class="article-img">
+            <a>
+                
+                <img src="images/banner.jpg" alt="关于Hexo部署文章时出现的问题-SSH" title="关于Hexo部署文章时出现的问题-SSH">
+                
+            </a>
+        </div>
+        <div class="article-feed">
+            <p>
+                前言想必使用github和hexo搭建博客的同学们或多或少的都会遇到一些让自己抓头的报错信息。最近我就遇到了两次关于权限问题的报错，所以写这篇文章也是让自己涨涨记性吧🙄  
+问题描述我遇到的权限问题是这样的首先我是之前有设置SSH的 ，并且使用github客户端和github上都可以正常使用，唯独是当我想在Hexo上发布文章时会出现下面的状况，真真的是使我几天都百思不得...
+            </p>
+        </div>
       
+    </div>
+    <footer class="article-footer">
+        <ul class="article-footer-menu">
+            
+                <li><i class="fa fa-calendar"></i>2016-09-07</li>
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/笔记/" class="color3">笔记</a>
+      
+  </li>
 
-      
+        </ul>
         
-          
-            <h1 id="浮动float"><a href="#浮动float" class="headerlink" title="浮动float"></a>浮动float</h1><h2 id="文档流"><a href="#文档流" class="headerlink" title="文档流"></a>文档流</h2><p><strong>文档中可显示对象在排列时所占用的位置</strong>  </p>
-<h2 id="浮动的定义"><a href="#浮动的定义" class="headerlink" title="浮动的定义"></a>浮动的定义</h2><p><strong>使元素脱离文档流，按照指定的方向发生移动，遇到父级边界或者相邻的浮动元素停下来</strong>  </p>
-<h2 id="float特征"><a href="#float特征" class="headerlink" title="float特征"></a>float特征</h2><ul>
-<li>块级元素在一排显示  </li>
-<li>内联元素支持宽高  </li>
-<li>默认内容撑开宽度  </li>
-<li>脱离文档流  </li>
-<li>提升半个层级   </li>
-</ul>
-<h2 id="clear清除浮动"><a href="#clear清除浮动" class="headerlink" title="clear清除浮动"></a>clear清除浮动</h2><p><strong>元素的某个方向上不能有浮动元素</strong>  </p>
-<p><code>clear left/right/both/none/inherit</code>  </p>
-<h1 id="清除浮动的方法"><a href="#清除浮动的方法" class="headerlink" title="清除浮动的方法"></a>清除浮动的方法</h1><h2 id="1-给父级加高度"><a href="#1-给父级加高度" class="headerlink" title="1.给父级加高度"></a>1.给父级加高度</h2><p><em>问题是扩展性不好</em>  </p>
-<h2 id="2-给父级加浮动"><a href="#2-给父级加浮动" class="headerlink" title="2.给父级加浮动"></a>2.给父级加浮动</h2><p><em>问题是页面中所有元素可能都要加浮动，margin左右自动失效</em>  </p>
-<h2 id="3-给父级设置-display：inline-block"><a href="#3-给父级设置-display：inline-block" class="headerlink" title="3.给父级设置 display：inline-block"></a>3.给父级设置 <code>display：inline-block</code></h2><p><em>问题是 margin左右auto失效</em>  </p>
-<h2 id="4-空标签清浮动"><a href="#4-空标签清浮动" class="headerlink" title="4.空标签清浮动"></a>4.空标签清浮动</h2><p>在浮动元素旁边新建空标签并给其添加样式<code>clear：both；</code>达到给浮动元素清除浮动的效果。<br><em>问题是IE6最小高度19px;解决后还有2px的偏差，而且设置空标签不符合标准，不建议使用</em>  </p>
-<h2 id="5-lt-br-gt-清浮动"><a href="#5-lt-br-gt-清浮动" class="headerlink" title="5.&lt;br&gt;清浮动"></a>5.<code>&lt;br&gt;</code>清浮动</h2><p>在浮动元素下面加<code>&lt;br clear=&quot;all&quot;/&gt;</code><br><em>问题是不符合工作中结构、样式、行为三者分离的要求</em>  </p>
-<h2 id="6-overflow清除浮动"><a href="#6-overflow清除浮动" class="headerlink" title="6.overflow清除浮动"></a>6.overflow清除浮动</h2><p>给浮动元素的父级添加<code>overflow：hidden；</code>  </p>
-<p><code>overflow:hidden;</code><em>溢出隐藏</em><br><code>overflow:scroll;</code><em>以滚动条形式出现</em></p>
-<h2 id="7-建议使用：after伪类清除浮动"><a href="#7-建议使用：after伪类清除浮动" class="headerlink" title="7.建议使用：after伪类清除浮动"></a><em>7.建议使用：after伪类清除浮动</em></h2><p>伪类：元素内部末尾添加的内容。<br>设置zoom,并将after内的content设为空。<br>伪类清除浮动，例如:   </p>
-<pre><code>.clearfix{ *zoom:1; }
-
-.clearfix:after{   
-content:&quot;&quot;;    
-display:block;   
-clear:both;    
-}  
-</code></pre>
-          
+            <a href="/2016/09/07/关于Hexo部署文章时出现的问题-SSH/#more" class="article-more-link" >more&gt;&gt;</a>
         
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
     </footer>
-  </article>
+  </div>
+</article>
 
 
+  
+    <article id="post-HTML知识点小结" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
+      <header class="article-header">
         
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/07/关于Hexo部署文章时出现的问题-SSH/" itemprop="url">
-                  关于Hexo部署文章时出现的问题-SSH
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-07T21:08:20+08:00" content="2016-09-07">
-              2016-09-07
-            </time>
-          </span>
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/29/HTML知识点小结/"  >HTML知识点小结</a>
+    </h1>
+  
 
           
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/09/07/关于Hexo部署文章时出现的问题-SSH/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/07/关于Hexo部署文章时出现的问题-SSH/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
       </header>
     
-
-
-    <div class="post-body" itemprop="articleBody">
-
+    <div class="article-entry " itemprop="articleBody">
       
-      
-
-      
-        
-          
-            <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>想必使用github和hexo搭建博客的同学们或多或少的都会遇到一些让自己抓头的报错信息。最近我就遇到了两次关于权限问题的报错，所以写这篇文章也是让自己涨涨记性吧🙄  </p>
-<h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p><strong>我遇到的权限问题是这样的</strong><br>首先我是之前有设置SSH的 ，并且使用github客户端和github上都可以正常使用，唯独是当我想在Hexo上发布文章时会出现下面的状况，真真的是使我几天都百思不得其解啊。  </p>
-<p><code>Permission denied (publickey).</code><br><code>fatal: Could not read from remote repository.</code><br><code>Please make sure you have the correct access rights and the repository exists.</code>   </p>
-<p><em>大致的意思是说：没有权限，无法读取远程仓库。请确保你有正确的访问权限或者确认仓库的存在。</em>  </p>
-<h1 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h1><p>在网上找到了好几种解决方案，我在这里想推荐的是一种我认为最简单粗暴的方法——<strong>直接删除已有的SSH文件然后重新设置并添加到github上。</strong>  </p>
-<h2 id="具体操作"><a href="#具体操作" class="headerlink" title="具体操作"></a>具体操作</h2><h3 id="打开终端，输入："><a href="#打开终端，输入：" class="headerlink" title="打开终端，输入："></a>打开终端，输入：</h3><p>   <code>ls -al ~/.ssh</code><br>   这个命令会列出你SSH账户里现存的SSH key,当然如果你之前就没有设置过那么就是空的。因为我之前是设置过的所以会罗列出之前设置的SSH。    </p>
-<h3 id="在文件夹中找到-SSH文件并删除"><a href="#在文件夹中找到-SSH文件并删除" class="headerlink" title="在文件夹中找到.SSH文件并删除"></a>在文件夹中找到.SSH文件并删除</h3><h3 id="再次打开终端，先重复第一步检查是否删除了，然后开始重新设置"><a href="#再次打开终端，先重复第一步检查是否删除了，然后开始重新设置" class="headerlink" title="再次打开终端，先重复第一步检查是否删除了，然后开始重新设置"></a>再次打开终端，先重复第一步检查是否删除了，然后开始重新设置</h3><h3 id="生成密匙"><a href="#生成密匙" class="headerlink" title="生成密匙"></a>生成密匙</h3><ul>
-<li>输入：<br><code>ssh-keygen -t rsa -C &quot;你的邮箱地址&quot;</code><br>这个命令会生成一个以你的邮箱为标签的SSH key .   </li>
-<li>然后bash会显示：<br><code>Generating public/private rsa key pair.
-Enter file in which to save the key (/c/Users/you/.ssh/id_rsa):</code>     </li>
-<li>直接回车，然后出现：<br> <code>Enter passphrase (empty for no passphrase):</code><br>如果你不怕麻烦可以设置一个，但我的建议是不要设置，简化操作。</li>
-<li>直接回车，然后出现：<br><code>Enter same passphrase again:</code><br>再次回车即可。此时你会看到：      <pre><code>Your identification has been saved in ~/.ssh/id_rsa.
-Your public key has been saved in ~/.ssh/id_rsa.pub.
-The key fingerprint is:
-......你的邮箱地址
-</code></pre></li>
-</ul>
-<h3 id="加入Agent"><a href="#加入Agent" class="headerlink" title="加入Agent"></a>加入Agent</h3><ul>
-<li>输入：<br><code>ssh-agent -s</code>   </li>
-<li>当出现：<br><code>Agent pid =XXX</code>   </li>
-<li><p>之后再输入：<br><code>ssh-add ~/.ssh/id_rsa</code>   </p>
-<p>到此为止，在本地我们就成功生成了一个新的SSH key.      </p>
-</li>
-</ul>
-<h3 id="将SSH-key-添加到GitHub"><a href="#将SSH-key-添加到GitHub" class="headerlink" title="将SSH key 添加到GitHub"></a>将SSH key 添加到GitHub</h3><ul>
-<li>打开自己的GitHub,点击自己头像找到倒数第二项的settings，然后找到侧栏上SSH and GPG keys .  </li>
-<li>点击new SSH  </li>
-<li>复制id_rsa.pub中的所有内容到Key框中，在Title框中输入方便自己记忆的名字。  </li>
-</ul>
-<p><strong>当网页显示添加成功后，就已经完成了全部的操作。</strong>  </p>
-<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><ul>
-<li><p>打开终端，输入：    </p>
-<p><code>ssh -T git@github.com</code>    </p>
-</li>
-<li><p>bash 会显示：    </p>
-<p><code>The authenticity of host &#39;github.com (207.97.227.239)&#39; can&#39;t be established.
-RSA key fingerprint is ......
-Are you sure you want to continue connecting (yes/no)?</code>    </p>
-</li>
-<li><p>输入yes 会出现如下提示：     </p>
-<p> <code>Hi username! You&#39;ve successfully authenticated, but GitHub does not
-provide shell access.</code>     </p>
-</li>
-</ul>
-<p><strong>如果成功看见此提示，说明你已经配置好了</strong>  </p>
-<h2 id="如果您有什么更好的解决方案还劳烦告知我🙆"><a href="#如果您有什么更好的解决方案还劳烦告知我🙆" class="headerlink" title="如果您有什么更好的解决方案还劳烦告知我🙆"></a>如果您有什么更好的解决方案还劳烦告知我🙆</h2>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
+        <div class="article-img">
+            <a>
                 
-                <a class="post-title-link" href="/2016/08/29/HTML知识点小结/" itemprop="url">
-                  HTML知识点小结
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-29T00:13:04+08:00" content="2016-08-29">
-              2016-08-29
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/08/29/HTML知识点小结/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/29/HTML知识点小结/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
+                <img src="images/banner.jpg" alt="HTML知识点小结" title="HTML知识点小结">
+                
+            </a>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="HTML知识点小结"><a href="#HTML知识点小结" class="headerlink" title="HTML知识点小结"></a>HTML知识点小结</h1><pre><code>&lt;meta charset=“UTF-8&quot;&gt;  
+        <div class="article-feed">
+            <p>
+                HTML知识点小结&lt;meta charset=“UTF-8&quot;&gt;  
 &lt;meta&gt;是一个单标签
 UTF-8 是统一转换格式
-</code></pre><h2 id="标签类型"><a href="#标签类型" class="headerlink" title="标签类型"></a>标签类型</h2><ul>
-<li>块: 独自占一行,支持所以样式,不设宽度将撑满整行  </li>
-<li>内嵌: 可以在一行并列显示,不支持宽高 不支持上下margin和padding ,宽度是由内容撑起来的,代码换行会被解析出一个空格   <h3 id="内嵌标签"><a href="#内嵌标签" class="headerlink" title="内嵌标签"></a>内嵌标签</h3><pre><code>&lt;span&gt;span&lt;/span&gt;
-&lt;strong&gt;strong&lt;/strong&gt;
-&lt;a href=&quot;#&quot;&gt;a标签&lt;/a&gt;
-&lt;em&gt;em&lt;/em&gt;
-...
-</code></pre><h4 id="不得不说的a标签"><a href="#不得不说的a标签" class="headerlink" title="不得不说的a标签"></a>不得不说的a标签</h4></li>
-</ul>
-<ol>
-<li>a元素，既可以用来链接到外部地址实现页面跳转功能，也可以链接到当前页面的某部分实现内部导航功能.<br>其中a标签里的href<br>若“”里面是页面地址 就是跳转作用；<br>若“”里面是压缩包名字 就是下载作用；<br>若“”里面是id名字 点击之后会跳转到该id的页面位置 即锚点作用；  </li>
-</ol>
-<pre><code>target=“_blank ” 新窗口打开页面
-target=“_self”  当前窗口打开
-&lt;base target=“_blank”/&gt;
-</code></pre><ol>
-<li>a标签的颜色 必须是写在a标签里面的！  </li>
-<li>a标签里面不能再包含a标签；  </li>
-<li><p>在ie6 下只有a 才支持:hover 伪类，其它标签都不支持，现在可以通过 csshover.htc 可以解决 ie6 的 hover 兼容问题。它利用 javascript 脚本来给元素的的样式定义，如果检测到 hover 定义，就给元素设置 onmouseover 和 onmouseout 事件，以此来实现 hover 的效果。  </p>
-<h3 id="块级元素"><a href="#块级元素" class="headerlink" title="块级元素"></a>块级元素</h3><pre><code>&lt;div&gt;块&lt;/div&gt;
-&lt;section&gt;划分页面板块&lt;/section&gt;
-&lt;header&gt;头部&lt;/header&gt;
-&lt;nav&gt;导航&lt;/nav&gt;
-&lt;footer&gt;底部&lt;/footer&gt;
-&lt;article&gt;article&lt;/article&gt;
-&lt;aside&gt;article的附属&lt;/aside&gt;
-&lt;ul&gt;
-     &lt;li&gt;无序列表&lt;/li&gt;      
-     &lt;li&gt;无序列表&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;ol&gt;
-    &lt;li&gt;有序列表&lt;/li&gt;
-    &lt;li&gt;有序列表&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;dl&gt;
-    &lt;dt&gt;定义列表的项目&lt;/dt&gt;
-    &lt;dd&gt;dt的展开描述&lt;/dd&gt;
-&lt;/dl&gt;
-&lt;h1&gt;标题&lt;/h1&gt;
-&lt;p&gt;段落&lt;/p&gt;
-</code></pre></li>
-</ol>
-<h2 id="块和内嵌的转化"><a href="#块和内嵌的转化" class="headerlink" title="块和内嵌的转化"></a>块和内嵌的转化</h2><ul>
-<li><p>display：block  内联转化为块  </p>
-</li>
-<li><p>display：inline  块转化为内联元素  </p>
-</li>
-<li><p>display：inline-block<em>的特点</em>：<br>1 块们能在一行显示<br>2 内嵌标签支持宽高<br>3 没有设置宽度时 内容会撑开宽度</p>
-<h4 id="img单标签"><a href="#img单标签" class="headerlink" title="img单标签"></a>img单标签</h4><p><strong>行内块级元素</strong></p>
-<pre><code>&lt;img src=“路径”/&gt;
-</code></pre><p><strong>路径的计算</strong>   </p>
-</li>
-<li><p>绝对路径：<br>1.线上的绝对路径 （网上固定的地址)<br>2.线下的绝对路径（不建议用）   </p>
-</li>
-<li><p>相对路径:<br>1.同目录的下一级 如 “img/pic/img.jpg”<br>2.图片在目录的上一级 如“../img.jpg”</p>
-<h3 id="其他标签详情请参阅"><a href="#其他标签详情请参阅" class="headerlink" title="其他标签详情请参阅"></a><em>其他标签详情请参阅</em></h3><p><a href="http://www.w3school.com.cn/tags/index.asp" target="_blank" rel="external">W3School</a></p>
-</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/08/21/笔记-Git的简单操作/" itemprop="url">
-                  笔记-Git的简单操作
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-21T00:10:36+08:00" content="2016-08-21">
-              2016-08-21
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/08/21/笔记-Git的简单操作/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/21/笔记-Git的简单操作/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
+标签类型
+块: 独自占一行,支持所以样式,不设宽度将撑满整行  
+内嵌: 可以在一行并列显示,不支持宽高 不支持上下margin和padding ,宽度是由内容撑起来的,代码换行会被解析出一个空格   内嵌标签&lt;...
+            </p>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
       
+    </div>
+    <footer class="article-footer">
+        <ul class="article-footer-menu">
+            
+                <li><i class="fa fa-calendar"></i>2016-08-29</li>
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
       
+    <a href="/tags/笔记/" class="color3">笔记</a>
+      
+  </li>
 
-      
+        </ul>
         
-          
-            <h1 id="笔记-Git的简单操作"><a href="#笔记-Git的简单操作" class="headerlink" title="笔记-Git的简单操作"></a>笔记-Git的简单操作</h1><h2 id="这是一篇非常基础的Git简单操作方法"><a href="#这是一篇非常基础的Git简单操作方法" class="headerlink" title="这是一篇非常基础的Git简单操作方法"></a>这是一篇非常基础的Git简单操作方法</h2><p><em>如果大神就不需要读下去了😈 不过十分欢迎帮我纠错、帮我进步嘿嘿</em>~~~  </p>
-<h2 id="git命令行的使用（俺这个是基于Mac系统写滴）"><a href="#git命令行的使用（俺这个是基于Mac系统写滴）" class="headerlink" title="git命令行的使用（俺这个是基于Mac系统写滴）"></a>git命令行的使用（俺这个是基于Mac系统写滴）</h2><ul>
-<li><code>git</code> &emsp;有三个区域，分别是<code>工作区 暂存区 版本库</code></li>
-<li><code>cd</code> &emsp;&emsp;到某一文件目录下  （<code>cd..</code>是回退到上一层目录）  </li>
-<li><code>git config</code> –global user.name(/email)  这是配置用户名  </li>
-<li><code>git status</code> 查看当前的状态  </li>
-<li><code>git add +文件</code> 将文件添加到了暂存区</li>
-<li><code>git add .</code>  &emsp;&emsp;是将想要上传的全部文件都添加到暂存区</li>
-<li><code>git commit</code> &emsp;是从暂存区添加到版本库   </li>
-<li><code>git commit -a -m &quot;文件&quot;</code> 简写方式&emsp;直接从工作区提交到版本库  </li>
-<li><code>git log</code>&emsp;查看提交历史版本&emsp;版本如果非常多的时候可以按回车继续加载&emsp;退出可以按Q键<br>&nbsp;<h2 id="关于对比"><a href="#关于对比" class="headerlink" title="关于对比"></a>关于对比</h2></li>
-<li><code>git diff</code>&emsp;这是工作区和暂存区之间的对比</li>
-<li><code>git diff--cached/staged</code>&emsp;暂存区和版本库之间的对比  </li>
-<li><code>git diff master</code>&emsp;工作区和版本库之间对比<br>&nbsp;<h2 id="关于撤销"><a href="#关于撤销" class="headerlink" title="关于撤销"></a>关于撤销</h2></li>
-<li><code>git reset 文件</code>&emsp;将文件从暂存区撤回工作区  </li>
-<li><code>git checkout --文件</code>&emsp;将工作区的文件还原到版本库或者暂存区的样子  </li>
-<li><code>git commit --amend</code>&emsp;撤销上交版本库<br>&nbsp;<h2 id="关于删除"><a href="#关于删除" class="headerlink" title="关于删除"></a>关于删除</h2></li>
-<li><code>git rm 文件名</code>&emsp;删除暂存区的文件，但是如果工作区的文件没有删除那么暂存区的也删除不了   </li>
-<li><code>git rm -f 文件名</code>&emsp;工作区和暂存区的文件都删除  </li>
-<li><code>git rm --cached 文件名</code>&emsp;暂存区的文件删掉，工作区的仍保留<br>&nbsp;<h2 id="关于恢复"><a href="#关于恢复" class="headerlink" title="关于恢复"></a>关于恢复</h2></li>
-<li>版本号可以通过git log获得</li>
-<li><code>git reset --hard(commit id)</code>回到之前的版本  </li>
-<li><code>git reset HEAD^</code>HEAD相当于指针，HEAD^代表回到前一个版本  </li>
-<li><code>git reset --hard HEAD~Number</code>向前回退多个版本的命令  </li>
-<li><code>git relog</code>可以查看之前的操作历史  </li>
-<li><code>git remote</code>查看远程仓库的名字</li>
-<li><code>git remote add</code>可以改名字</li>
-<li><code>git remote -v</code>查看远程仓库的地址  </li>
-<li><code>git push 远程仓库名字  分支</code>向github推送<br>&nbsp;<h2 id="关于分支"><a href="#关于分支" class="headerlink" title="关于分支"></a>关于分支</h2></li>
-<li><code>git branch</code>可以查看当前所有分支  </li>
-<li><code>git branch new1</code>创建一个新的分支</li>
-<li><code>git checkout new1</code>切换到new1分支上</li>
-<li><code>git checkout -b new1</code>简写 创建一个新分支并切换到新分支上</li>
-<li><code>git branch --merged</code>查看已经合并了的分支都有哪些</li>
-<li><code>git branch --no-merged</code>查看还没有合并到master上的分支</li>
-<li><code>git branch -d new1</code>删除已合并的分支（设new1是以及合并到master上的分支）</li>
-<li><code>git branch -D new2</code>强制删除还没有合并的分支<br>&nbsp;<h2 id="关于冲突"><a href="#关于冲突" class="headerlink" title="关于冲突"></a>关于冲突</h2></li>
-<li>一般是建议先同步更新代码到本地再在本地进行后续的开发</li>
-<li><code>git fetch</code>同步</li>
-<li><code>git diff master origin/master</code>查看区别以及冲突</li>
-<li><code>git merge origin/master</code>合并版本库文件到本地  </li>
-<li>处理完冲突后再提交<code>git commit -a -m</code>再<code>git push origin master</code></li>
-<li><code>git pull</code>是直接拉取合并 没有查看冲突和手动合并的过程<br>&nbsp;<h2 id="关于开源项目协作"><a href="#关于开源项目协作" class="headerlink" title="关于开源项目协作"></a>关于开源项目协作</h2></li>
-<li>fork 是从别人那儿克隆过来的 再新开的分支</li>
-<li>如果你没有开发者权限 还想把自己的一些开发建议提供给开发者那么就需要用<code>pull request</code>来申请合并~<br>&nbsp;<h3 id="关于更详尽更权威的git使用可以参阅"><a href="#关于更详尽更权威的git使用可以参阅" class="headerlink" title="关于更详尽更权威的git使用可以参阅"></a>关于更详尽更权威的git使用可以参阅</h3><a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external">廖雪峰-Git教程</a><br><a href="https://git-scm.com" target="_blank" rel="external">Git官网</a>  </li>
-</ul>
-<p><em>如若文章有些许错误之处还请多多指出 帮助我进步哈~</em>🙆</p>
-
-          
+            <a href="/2016/08/29/HTML知识点小结/#more" class="article-more-link" >more&gt;&gt;</a>
         
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
     </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/08/20/絮絮叨叨/" itemprop="url">
-                  絮絮叨叨~
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-20T21:16:15+08:00" content="2016-08-20">
-              2016-08-20
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/08/20/絮絮叨叨/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/20/絮絮叨叨/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="絮絮叨叨"><a href="#絮絮叨叨" class="headerlink" title="絮絮叨叨"></a>絮絮叨叨</h1><p>其实我更习惯于白纸黑字的手写笔记，嘿嘿 可能是因为自己写的就只有自己能看懂的缘故吧~~在网上看了很多大牛写的技术文章感觉好赞，因为我也是名工科女，所以之前也确实有一些认同所谓文理科之间的鸿沟（因为我的文笔确实不咋样-_-|||）。可是呢看到那些大牛们可以把自己的文章写的十分详尽内容充实而又条理清晰确实十分膜拜！<br>所以呢，我决定以后也要多写东西，多记笔记，多加练习。😅</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/08/05/(*^__^*) /" itemprop="url">
-                  (*^__^*)
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-05T10:29:44+08:00" content="2016-08-05">
-              2016-08-05
-            </time>
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/08/05/(*^__^*) /#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/08/05/(*^__^*) /" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="博客小记"><a href="#博客小记" class="headerlink" title="博客小记"></a>博客小记</h1><h2 id="心血来潮"><a href="#心血来潮" class="headerlink" title="心血来潮"></a>心血来潮</h2><p>突然有了想要有个自己博客的念头，然后逼死强迫症似的逼着自己找资源，感叹网络便捷的同时也是挑花了眼。终于！总算是有了这么个小窝。虽然它现在还比较简陋，不过没关系，相信它将会跟随我的进步而继续成长壮大的！给自己一些鼓励~继续加油！The harder the more fortunate! lucky girl~</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
-
-  
-
-
-          </div>
-          
-
-
-          
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
   </div>
+</article>
 
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
 
+  
+    <article id="post-笔记-Git的简单操作" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/21/笔记-Git的简单操作/"  >笔记-Git的简单操作</a>
+    </h1>
+  
+
+          
+      </header>
+    
+    <div class="article-entry " itemprop="articleBody">
       
-
-      
-
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.jpg"
-               alt="Monkey･D･wwl" />
-          <p class="site-author-name" itemprop="name">Monkey･D･wwl</p>
-          <p class="site-description motion-element" itemprop="description"></p>
-        </div>
-        <nav class="site-state motion-element">
-          <div class="site-state-item site-state-posts">
-            <a href="/archives">
-              <span class="site-state-item-count">9</span>
-              <span class="site-state-item-name">日志</span>
+        <div class="article-img">
+            <a>
+                
+                <img src="images/banner.jpg" alt="笔记-Git的简单操作" title="笔记-Git的简单操作">
+                
             </a>
-          </div>
-
-          
-
-          
-            <div class="site-state-item site-state-tags">
-              <a href="/tags">
-                <span class="site-state-item-count">2</span>
-                <span class="site-state-item-name">标签</span>
-              </a>
-            </div>
-          
-
-        </nav>
-
-        
-
-        <div class="links-of-author motion-element">
-          
-            
-              <span class="links-of-author-item">
-                <a href="https://github.com/MonkeyDwwl" target="_blank" title="GitHub">
-                  
-                    <i class="fa fa-fw fa-github"></i>
-                  
-                  GitHub
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://codepen.io/MonkeyDwwl" target="_blank" title="CodePen">
-                  
-                    <i class="fa fa-fw fa-codepen"></i>
-                  
-                  CodePen
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="https://twitter.com/MonkeyDwwl" target="_blank" title="Twitter">
-                  
-                    <i class="fa fa-fw fa-twitter"></i>
-                  
-                  Twitter
-                </a>
-              </span>
-            
-              <span class="links-of-author-item">
-                <a href="http://weibo.com/2664809417" target="_blank" title="微博">
-                  
-                    <i class="fa fa-fw fa-weibo"></i>
-                  
-                  微博
-                </a>
-              </span>
-            
-          
         </div>
-
-        
-        
-
-        
-        
-
-      </section>
-
+        <div class="article-feed">
+            <p>
+                笔记-Git的简单操作这是一篇非常基础的Git简单操作方法如果大神就不需要读下去了😈 不过十分欢迎帮我纠错、帮我进步嘿嘿~~~  
+git命令行的使用（俺这个是基于Mac系统写滴）
+git &emsp;有三个区域，分别是工作区 暂存区 版本库
+cd &emsp;&emsp;到某一文件目录下  （cd..是回退到上一层目录）  
+git config –global us...
+            </p>
+        </div>
       
-
     </div>
-  </aside>
+    <footer class="article-footer">
+        <ul class="article-footer-menu">
+            
+                <li><i class="fa fa-calendar"></i>2016-08-21</li>
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/笔记/" class="color3">笔记</a>
+      
+  </li>
 
-
+        </ul>
         
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright" >
-  
-  &copy; 
-  <span itemprop="copyrightYear">2017</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Monkey･D･wwl</span>
-</div>
-
-<div class="powered-by">
-  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
-</div>
-
-<div class="theme-info">
-  主题 -
-  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
-  </a>
-</div>
-
+            <a href="/2016/08/21/笔记-Git的简单操作/#more" class="article-more-link" >more&gt;&gt;</a>
         
-
-        
-      </div>
     </footer>
+  </div>
+</article>
 
-    <div class="back-to-top">
-      <i class="fa fa-arrow-up"></i>
+
+  
+    <article id="post-絮絮叨叨" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/20/絮絮叨叨/"  >絮絮叨叨~</a>
+    </h1>
+  
+
+          
+      </header>
+    
+    <div class="article-entry " itemprop="articleBody">
+      
+        <div class="article-img">
+            <a>
+                
+                <img src="images/banner.jpg" alt="絮絮叨叨~" title="絮絮叨叨~">
+                
+            </a>
+        </div>
+        <div class="article-feed">
+            <p>
+                絮絮叨叨其实我更习惯于白纸黑字的手写笔记，嘿嘿 可能是因为自己写的就只有自己能看懂的缘故吧~~在网上看了很多大牛写的技术文章感觉好赞，因为我也是名工科女，所以之前也确实有一些认同所谓文理科之间的鸿沟（因为我的文笔确实不咋样-_-|||）。可是呢看到那些大牛们可以把自己的文章写的十分详尽内容充实而又条理清晰确实十分膜拜！所以呢，我决定以后也要多写东西，多记笔记，多加练习。😅
+
+            </p>
+        </div>
+      
+    </div>
+    <footer class="article-footer">
+        <ul class="article-footer-menu">
+            
+                <li><i class="fa fa-calendar"></i>2016-08-20</li>
+            
+            
+        </ul>
+        
+            <a href="/2016/08/20/絮絮叨叨/#more" class="article-more-link" >more&gt;&gt;</a>
+        
+    </footer>
+  </div>
+</article>
+
+
+  
+    <article id="post-(*^__^*) " class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/08/05/(*^__^*) /"  >(*^__^*)</a>
+    </h1>
+  
+
+          
+      </header>
+    
+    <div class="article-entry " itemprop="articleBody">
+      
+        <div class="article-img">
+            <a>
+                
+                <img src="images/banner.jpg" alt="(*^__^*)" title="(*^__^*)">
+                
+            </a>
+        </div>
+        <div class="article-feed">
+            <p>
+                博客小记心血来潮突然有了想要有个自己博客的念头，然后逼死强迫症似的逼着自己找资源，感叹网络便捷的同时也是挑花了眼。终于！总算是有了这么个小窝。虽然它现在还比较简陋，不过没关系，相信它将会跟随我的进步而继续成长壮大的！给自己一些鼓励~继续加油！The harder the more fortunate! lucky girl~
+
+            </p>
+        </div>
+      
+    </div>
+    <footer class="article-footer">
+        <ul class="article-footer-menu">
+            
+                <li><i class="fa fa-calendar"></i>2016-08-05</li>
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/杂记/" class="color3">杂记</a>
+      
+  </li>
+
+        </ul>
+        
+            <a href="/2016/08/05/(*^__^*) /#more" class="article-more-link" >more&gt;&gt;</a>
+        
+    </footer>
+  </div>
+</article>
+
+
+  
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2017 Monkey･D･wwl<br>
+      </p>
     </div>
   </div>
-
-  
-
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://yoursite.com",
+      animate: true,
+      isHome: true
   }
 </script>
+<div class="sidebar">
+    <div id="sidebar-search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div class="sidebar-menu">
+        <i class="fa fa-bars"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/杂记/" style="font-size: 10px;">杂记</a> <a href="/tags/笔记/" style="font-size: 20px;">笔记</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+</div>
+
+<div class="search-container" id="search-container">
+    <ul class="search-result" id="search-result">
+    </ul>
+</div>
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/sidebar-menu-box.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
 
 
 
@@ -1616,215 +662,10 @@ target=“_self”  当前窗口打开
 
 
 
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
 
-
-  
-
-
-
-  
-  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-
-  
-  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-  
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
-
-
-
-  
-  
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
-
-
-
-  
-
-  
-    
-  
-
-  <script type="text/javascript">
-    var duoshuoQuery = {short_name:"monkeydwings"};
-    (function() {
-      var ds = document.createElement('script');
-      ds.type = 'text/javascript';ds.async = true;
-      ds.id = 'duoshuo-script';
-      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-      ds.charset = 'UTF-8';
-      (document.getElementsByTagName('head')[0]
-      || document.getElementsByTagName('body')[0]).appendChild(ds);
-    })();
-  </script>
-
-  
-
-
-
-
-
-
-  
-  
-  <script type="text/javascript">
-    // Popup Window;
-    var isfetched = false;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length == 0) {
-       search_path = "search.xml";
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    function proceedsearch() {
-      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
-      $('.popup').toggle();
-
-    }
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-    'use strict';
-    $.ajax({
-        url: path,
-        dataType: "xml",
-        async: true,
-        success: function( xmlResponse ) {
-            // get the contents from search data
-            isfetched = true;
-            $('.popup').detach().appendTo('.header-inner');
-            var datas = $( "entry", xmlResponse ).map(function() {
-                return {
-                    title: $( "title", this ).text(),
-                    content: $("content",this).text(),
-                    url: $( "url" , this).text()
-                };
-            }).get();
-            var $input = document.getElementById(search_id);
-            var $resultContent = document.getElementById(content_id);
-            $input.addEventListener('input', function(){
-                var matchcounts = 0;
-                var str='<ul class=\"search-result-list\">';
-                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
-                $resultContent.innerHTML = "";
-                if (this.value.trim().length > 1) {
-                // perform local searching
-                datas.forEach(function(data) {
-                    var isMatch = true;
-                    var content_index = [];
-                    var data_title = data.title.trim().toLowerCase();
-                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
-                    var data_url = data.url;
-                    var index_title = -1;
-                    var index_content = -1;
-                    var first_occur = -1;
-                    // only match artiles with not empty titles and contents
-                    if(data_title != '' && data_content != '') {
-                        keywords.forEach(function(keyword, i) {
-                            index_title = data_title.indexOf(keyword);
-                            index_content = data_content.indexOf(keyword);
-                            if( index_title < 0 && index_content < 0 ){
-                                isMatch = false;
-                            } else {
-                                if (index_content < 0) {
-                                    index_content = 0;
-                                }
-                                if (i == 0) {
-                                    first_occur = index_content;
-                                }
-                            }
-                        });
-                    }
-                    // show search results
-                    if (isMatch) {
-                        matchcounts += 1;
-                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
-                        var content = data.content.trim().replace(/<[^>]+>/g,"");
-                        if (first_occur >= 0) {
-                            // cut out 100 characters
-                            var start = first_occur - 20;
-                            var end = first_occur + 80;
-                            if(start < 0){
-                                start = 0;
-                            }
-                            if(start == 0){
-                                end = 50;
-                            }
-                            if(end > content.length){
-                                end = content.length;
-                            }
-                            var match_content = content.substring(start, end);
-                            // highlight all keywords
-                            keywords.forEach(function(keyword){
-                                var regS = new RegExp(keyword, "gi");
-                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
-                            });
-
-                            str += "<p class=\"search-result\">" + match_content +"...</p>"
-                        }
-                        str += "</li>";
-                    }
-                })};
-                str += "</ul>";
-                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
-                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
-                $resultContent.innerHTML = str;
-            });
-            proceedsearch();
-        }
-    });}
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched == false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-
-    });
-
-    $('.popup-btn-close').click(function(e){
-      $('.popup').hide();
-      $(".popoverlay").remove();
-      $('body').css('overflow', '');
-    });
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-  </script>
-
-
-  
-
-  
-
-  
-
+  </div>
 </body>
 </html>
