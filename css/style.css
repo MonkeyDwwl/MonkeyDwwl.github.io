@@ -453,6 +453,7 @@ body {
   margin: 20px auto;
   padding: 10px 0;
   color: #0cc;
+  font-weight: bold;
   letter-spacing: 5px;
 }
 .header-nav {
@@ -463,7 +464,7 @@ body {
   text-align: center;
 }
 .header-nav .social a {
-  color: #696969;
+  color: #fff;
   margin-right: 15px;
 }
 .header-nav .social a:hover {
