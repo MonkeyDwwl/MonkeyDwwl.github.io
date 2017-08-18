@@ -8,38 +8,32 @@
   
     <meta name="keywords" content="MonkeyDwwl's Blog" />
   
-  <meta name="description" content="根据自己手绘简图进一步探寻JavaScript原型链机制
-
-原型与隐式原型概念
+  <meta name="description" content="MinHow-根据自己手绘简图进一步探寻JavaScript原型链机制原型与隐式原型概念
 原型：所有的 函数 都有一个属性名叫做prototype的属性；这个属性的值是一个对象；这个属性就是原型。
 隐式原型：所有的 对象 都有一个叫做__proto__的属性；它的属性值又是一个普通的对象；这就是隐式原型。
 
-谈到隐式原型，它是以双下划线开头和结尾的，表示它是私有的，不公开的。 它原本不是 ES 的标准，无奈">
+谈到隐式原型，它是以双下划线开头和结尾的，表示它是私有的，不公开的。 它原本不是 ES 的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript之图解原型链">
 <meta property="og:url" content="http://yoursite.com/2017/08/18/JavaScript之图解原型链/index.html">
 <meta property="og:site_name" content="Monkey･D･wwl">
-<meta property="og:description" content="根据自己手绘简图进一步探寻JavaScript原型链机制
-
-原型与隐式原型概念
+<meta property="og:description" content="MinHow-根据自己手绘简图进一步探寻JavaScript原型链机制原型与隐式原型概念
 原型：所有的 函数 都有一个属性名叫做prototype的属性；这个属性的值是一个对象；这个属性就是原型。
 隐式原型：所有的 对象 都有一个叫做__proto__的属性；它的属性值又是一个普通的对象；这就是隐式原型。
 
-谈到隐式原型，它是以双下划线开头和结尾的，表示它是私有的，不公开的。 它原本不是 ES 的标准，无奈">
+谈到隐式原型，它是以双下划线开头和结尾的，表示它是私有的，不公开的。 它原本不是 ES 的">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2730186-9f997c83ebb9e446.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2730186-f738c5bebca7885d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2730186-55f634c21b70ec7a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2730186-b2266db3090dacca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2017-08-18T02:27:17.000Z">
+<meta property="og:updated_time" content="2017-08-18T02:35:06.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript之图解原型链">
-<meta name="twitter:description" content="根据自己手绘简图进一步探寻JavaScript原型链机制
-
-原型与隐式原型概念
+<meta name="twitter:description" content="MinHow-根据自己手绘简图进一步探寻JavaScript原型链机制原型与隐式原型概念
 原型：所有的 函数 都有一个属性名叫做prototype的属性；这个属性的值是一个对象；这个属性就是原型。
 隐式原型：所有的 对象 都有一个叫做__proto__的属性；它的属性值又是一个普通的对象；这就是隐式原型。
 
-谈到隐式原型，它是以双下划线开头和结尾的，表示它是私有的，不公开的。 它原本不是 ES 的标准，无奈">
+谈到隐式原型，它是以双下划线开头和结尾的，表示它是私有的，不公开的。 它原本不是 ES 的">
 <meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/2730186-9f997c83ebb9e446.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
   
   
@@ -134,9 +128,7 @@
     <div class="article-entry post-content" itemprop="articleBody">
       
             
-            <p>根据自己手绘简图进一步探寻JavaScript原型链机制</p>
-<hr>
-<h2 id="原型与隐式原型"><a href="#原型与隐式原型" class="headerlink" title="原型与隐式原型"></a>原型与隐式原型</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><ol>
+            <h2 id="MinHow-根据自己手绘简图进一步探寻JavaScript原型链机制"><a href="#MinHow-根据自己手绘简图进一步探寻JavaScript原型链机制" class="headerlink" title="MinHow-根据自己手绘简图进一步探寻JavaScript原型链机制"></a>MinHow-根据自己手绘简图进一步探寻JavaScript原型链机制</h2><h2 id="原型与隐式原型"><a href="#原型与隐式原型" class="headerlink" title="原型与隐式原型"></a>原型与隐式原型</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><ol>
 <li>原型：所有的 <strong>函数</strong> 都有一个属性名叫做<code>prototype</code>的属性；这个属性的值是一个对象；这个属性就是原型。</li>
 <li>隐式原型：所有的 <strong>对象</strong> 都有一个叫做<code>__proto__</code>的属性；它的属性值又是一个普通的对象；这就是隐式原型。</li>
 </ol>
@@ -226,7 +218,7 @@
 
 
       <p>
-        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
         Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
       &copy; 2017 Monkey･D･wwl<br>
       </p>
