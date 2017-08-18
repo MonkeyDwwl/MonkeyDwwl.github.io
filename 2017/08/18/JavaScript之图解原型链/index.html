@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>JavaScript之图解原型链 | Monkey･D･wwl</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="MonkeyDwwl's Blog" />
+  
+  <meta name="description" content="根据自己手绘简图进一步探寻JavaScript原型链机制">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript之图解原型链">
+<meta property="og:url" content="http://yoursite.com/2017/08/18/JavaScript之图解原型链/index.html">
+<meta property="og:site_name" content="Monkey･D･wwl">
+<meta property="og:description" content="根据自己手绘简图进一步探寻JavaScript原型链机制">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2730186-9f997c83ebb9e446.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2730186-f738c5bebca7885d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2730186-55f634c21b70ec7a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="http://upload-images.jianshu.io/upload_images/2730186-b2266db3090dacca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2017-08-18T02:22:24.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript之图解原型链">
+<meta name="twitter:description" content="根据自己手绘简图进一步探寻JavaScript原型链机制">
+<meta name="twitter:image" content="http://upload-images.jianshu.io/upload_images/2730186-9f997c83ebb9e446.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        MonkeyDwwl&#39;s Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        一个专注 WEB 开发的技术博客
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="github" target="_blank" href="//github.com/MonkeyDwwl" title="github"><i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a class="twitter" target="_blank" href="//twitter.com/MonkeyDwwl" title="twitter"><i class="fa fa-twitter fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-JavaScript之图解原型链" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      JavaScript之图解原型链
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/笔记/">笔记</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2017-08-18
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <p>根据自己手绘简图进一步探寻JavaScript原型链机制<br><a id="more"></a></p>
+<h2 id="cover-picture-images-PrototypeChain-jpg"><a href="#cover-picture-images-PrototypeChain-jpg" class="headerlink" title="cover_picture: /images/PrototypeChain.jpg"></a>cover_picture: /images/PrototypeChain.jpg</h2><h2 id="原型与隐式原型"><a href="#原型与隐式原型" class="headerlink" title="原型与隐式原型"></a>原型与隐式原型</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><ol>
+<li>原型：所有的 <strong>函数</strong> 都有一个属性名叫做<code>prototype</code>的属性；这个属性的值是一个对象；这个属性就是原型。</li>
+<li>隐式原型：所有的 <strong>对象</strong> 都有一个叫做<code>__proto__</code>的属性；它的属性值又是一个普通的对象；这就是隐式原型。</li>
+</ol>
+<p>谈到隐式原型，它是以双下划线开头和结尾的，表示它是私有的，不公开的。 它原本不是 ES 的标准，无奈众多浏览器早早地都实现了这个属性，而且应用得还挺广泛的。ES 为了向下兼容性只好接纳它成为标准的一部分，是一个典型的现实倒逼标准的例子。  </p>
+<h3 id="函数的特殊性"><a href="#函数的特殊性" class="headerlink" title="函数的特殊性"></a>函数的特殊性</h3><p><em>函数既有<code>prototype</code>又有<code>__proto__</code></em>  </p>
+<h3 id="原型与隐式原型之间的关系"><a href="#原型与隐式原型之间的关系" class="headerlink" title="原型与隐式原型之间的关系"></a>原型与隐式原型之间的关系</h3><p>如果对象 f1 是由构造器 F 所创建的，那么如下关系成立：<br><code>f1.__proto__===F.prototype</code><br>即 <em>对象的隐式原型</em> 指向创建这个对象的构造器的 <em>原型对象</em>。  </p>
+<h2 id="原型链"><a href="#原型链" class="headerlink" title="原型链"></a>原型链</h2><blockquote>
+<p>JavaScript 是基于原型的语言。当我们调用一个对象的属性时，如果对象没有该属性，JavaScript 解释器就会从对象的原型对象上去找该属性，如果原型上也没有该属性，那就去找原型的原型。这种属性查找的方式被称为原型链（prototype chain）。  </p>
+</blockquote>
+<h3 id="JavaScript中的两条链"><a href="#JavaScript中的两条链" class="headerlink" title="JavaScript中的两条链"></a>JavaScript中的两条链</h3><ul>
+<li>作用域链：作用是确定函数中<strong>变量的值</strong>。</li>
+<li>原型链：作用是确定对象的<strong>属性的值</strong>。  </li>
+</ul>
+<p><em>当然属性的本质上也是变量，之所以称为属性是因为它属于某一个对象</em>  </p>
+<p>在JavaScript设计之初是没有类的概念的（ES6之前），原型系统确是最初就有的语言设计。原型链的设计就是为了能够让多个实例对象可以共享一些相同的属性和方法，模拟继承的方式。<br>原型继承经常被视为JavaScript的一个弱点，但事实上原型继承模型比经典的继承模型可能更强大。从某种程度上说，它是更加纯粹的面向对象设计（区别于其他编程语言的面向类的设计），毕竟在JavaScript中一切皆是对象。  </p>
+<h3 id="图解原型链"><a href="#图解原型链" class="headerlink" title="图解原型链"></a>图解原型链</h3><p>话不多说上图先<img src="http://upload-images.jianshu.io/upload_images/2730186-9f997c83ebb9e446.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="PrototypeChain">   </p>
+<h4 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h4><p>以f1为例，假设现在要访问对象 f1 的 a 属性，即通过 f1.a 或者是 f1[a]来访问这个属性。它会按如下步骤去找这个 a 属性：</p>
+<p>第一步：在 f1 对象的自有属性中找，如果找到 a，则返回 f1.a，如果找不到，则进入第二步。  </p>
+<p>第二步：通过 f1 对象的隐式原型指向构造 f1 的函数 Fun 的原型对象即<code>Fun.prototype</code>，如果在这里找到了属性 a ，则返回 <code>f1.__proto__.a</code>， 如果找不到，则继续下一步。  </p>
+<p>第三步： <code>f1.__proto__</code>即 <code>Fun.prototype</code>这个对象本身是一个对象，它应该是由内置对象构造器Object构造的，那么它的隐式原型指向的就是这个对象构造器的原型即<code>Object.protoype</code>，在这里要继续查询属性 a ，如果找到了则返回<code>f1.__proto__.__proto__.a</code>，如果找不到，则继续：  </p>
+<p>第四步：<code>f1.__proto__.__proto__</code>即 <code>Object.protoype</code> 这个对象的隐式原型指向的这个对象本身的构造器的原型对象即<code>Object.protoype.__proto__</code>去找，发现为null，即到达了原型链的顶部，而且还没有找到属性 a ，则返回 undefined。</p>
+<p><strong>整个查找 a 属性的过程，是按一个链式结构在找，这个链就是原型链。</strong><br>由于原型链的存在，它的查找是自发的过程，中间的<code>__proto__</code>可以都省略掉。</p>
+<h4 id="代码验证"><a href="#代码验证" class="headerlink" title="代码验证"></a>代码验证</h4><p><img src="http://upload-images.jianshu.io/upload_images/2730186-f738c5bebca7885d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="测试代码">  </p>
+<p>同理可得另外两个例子的代码验证：<br><img src="http://upload-images.jianshu.io/upload_images/2730186-55f634c21b70ec7a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">  </p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2730186-b2266db3090dacca.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="">  </p>
+<h4 id="要点1：对象是由函数创造的-构造器"><a href="#要点1：对象是由函数创造的-构造器" class="headerlink" title="要点1：对象是由函数创造的 - 构造器"></a>要点1：对象是由函数创造的 - 构造器</h4><ul>
+<li>在JavaScript中，<strong>函数</strong> 可以用来创建对象（区别于其他面向对象的程序设计中，能够创建对象的叫<strong>类</strong>，ES6之前JS还没有类的概念），用于创建创建对象的 <strong>函数</strong> 就称为 <strong>构造器（constructor）</strong>。  </li>
+<li><strong>函数</strong> 如果希望当做<strong>构造器</strong>来用，需要在前面加 <strong>new</strong> 关键字；不加new就是普通函数调用。  </li>
+<li>任何函数都可以当做构造器使用，前面加 <strong>new</strong> 即可</li>
+<li>一般约定打算作为构造器用的函数，首字母大写</li>
+<li>获取创建对象的构造器的方法:<br><code>对象.__proto__.constructor</code>   </li>
+</ul>
+<h4 id="要点2：构造函数的原型对象中有个属性指向构造函数本身"><a href="#要点2：构造函数的原型对象中有个属性指向构造函数本身" class="headerlink" title="要点2：构造函数的原型对象中有个属性指向构造函数本身"></a>要点2：构造函数的原型对象中有个属性指向构造函数本身</h4><p><code>构造函数.prototype.constructor === 构造函数</code>  </p>
+<h4 id="要点3：原型链终点"><a href="#要点3：原型链终点" class="headerlink" title="要点3：原型链终点"></a>要点3：原型链终点</h4><p>根据定义，null 没有 prototype，并作为这个原型链的最后一个环节。根据验证<code>Object.prototype</code>的隐式原型指向的就是null；所以说JavaScript中几乎所有的对象都是位于原型链顶端的Object的实例。</p>
+<p><strong>以上就是我对JavaScript中原型链的理解以及小结</strong>如有错误望告知！不胜感激🤓</p>
+
+      
+    </div>
+    <footer class="article-footer">
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/tags/JavaScript/" class="color1">JavaScript</a>
+      
+    <a href="/tags/原型链/" class="color4">原型链</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2017/08/13/JavaScript-闭包/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">JavaScript之闭包</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2017 Monkey･D･wwl<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://yoursite.com",
+      animate: true,
+      isHome: false
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div class="sidebar-menu">
+        <i class="fa fa-bars"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-tags">
+            <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/原型链/" style="font-size: 10px;">原型链</a> <a href="/tags/杂记/" style="font-size: 10px;">杂记</a> <a href="/tags/笔记/" style="font-size: 20px;">笔记</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+</div>
+
+<div class="search-container" id="search-container">
+    <ul class="search-result" id="search-result">
+    </ul>
+</div>
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/sidebar-menu-box.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+  </div>
+</body>
+</html>
